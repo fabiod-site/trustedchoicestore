@@ -9,7 +9,7 @@
     body {
       margin: 0;
       padding: 40px;
-      background: linear-gradient(to bottom, #f5faff, #d6e9ff); /* degradê azul suave */
+      background: linear-gradient(to bottom, #f5faff, #d6e9ff);
       font-family: Arial, sans-serif;
       font-size: 20px;
       line-height: 1.8;
@@ -133,6 +133,17 @@
       text-decoration: none;
     }
 
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -194,9 +205,9 @@
 
   <p>Produkt może być pomocnym elementem rutyny wspierającej zdrowie oczu, zwłaszcza w kontekście wyzwań cyfrowej rzeczywistości.</p>
 
-  <img class="fullwidth" src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1">
-  <img class="fullwidth" src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2">
-  <img class="fullwidth" src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
+  <img class="fullwidth fade-in" src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1">
+  <img class="fullwidth fade-in" src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2">
+  <img class="fullwidth fade-in" src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
 
   <hr>
 
@@ -209,6 +220,24 @@
     Strona ma charakter informacyjny i nie zastępuje konsultacji medycznej.<br>
     <a href="https://trustedchoicestore.store/privacypolicy">Privacy Policy</a>
   </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
 
 </body>
 </html>
