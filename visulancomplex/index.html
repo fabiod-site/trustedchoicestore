@@ -58,17 +58,31 @@
       height: auto;
     }
 
-    .btn {
+    @keyframes pulseJump {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+      50% { transform: translateY(-8px) scale(1.05); opacity: 0.9; }
+    }
+
+    .cta-button {
       display: block;
       width: fit-content;
-      background-color: #5c3535;
+      background-color: #1a6ed8;
       color: white;
       text-decoration: none;
       padding: 20px 40px;
-      margin: 40px auto;
+      margin: 50px auto;
       font-size: 22px;
       border-radius: 10px;
       text-align: center;
+      animation: pulseJump 1.8s infinite ease-in-out;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(26, 110, 216, 0.4);
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #125dbb;
+      transform: scale(1.07);
     }
 
     img.fullwidth {
@@ -118,7 +132,9 @@
     </div>
   </div>
 
-  <a class="btn" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Zamów z oficjalnej strony</a>
+  <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
+    👉 Zamów z oficjalnej strony
+  </a>
 
   <h2>Czym jest Visulan Complex?</h2>
 
@@ -133,9 +149,14 @@
   <img class="fullwidth" src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
   <img class="fullwidth" src="../visulanimg/visulan4.jpg" alt="Zdjęcie 4">
 
-  <a class="btn" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Przejdź do zamówienia</a>
+  <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
+    👉 Przejdź do zamówienia
+  </a>
 
   <footer>
     © 2025 Trusted Choice Store – Wszelkie prawa zastrzeżone.<br>
     Strona ma charakter informacyjny i nie zastępuje konsultacji medycznej.
-  </
+  </footer>
+
+</body>
+</html>
