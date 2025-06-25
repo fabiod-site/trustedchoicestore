@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <title>Visulan Complex – Oficjalna Strona</title>
+  <title>Visulan – Oficjalna Strona</title>
   <link rel="icon" href="../visulanimg/visulanpng.png" type="image/png">
   <style>
     body {
@@ -15,10 +15,34 @@
       color: #111;
     }
 
-    h1 {
-      font-size: 38px;
-      margin-bottom: 20px;
-      text-align: center;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-title {
+      font-size: 34px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .top-button {
+      background-color: #1a6ed8;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      animation: pulseJump 1.8s infinite ease-in-out;
+      box-shadow: 0 0 10px rgba(26, 110, 216, 0.3);
+    }
+
+    @keyframes pulseJump {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
+      50% { transform: translateY(-8px) scale(1.05); opacity: 0.9; }
     }
 
     h2 {
@@ -58,11 +82,6 @@
       height: auto;
     }
 
-    @keyframes pulseJump {
-      0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
-      50% { transform: translateY(-8px) scale(1.05); opacity: 0.9; }
-    }
-
     .cta-button {
       display: block;
       width: fit-content;
@@ -91,6 +110,12 @@
       margin: 30px auto;
     }
 
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 50px 0 40px;
+    }
+
     footer {
       margin-top: 80px;
       font-size: 16px;
@@ -101,6 +126,11 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
       .intro {
         flex-direction: column;
         align-items: center;
@@ -114,7 +144,14 @@
 </head>
 <body>
 
-  <h1>👁️ Visulan – naturalne wsparcie dla zdrowia oczu</h1>
+  <header>
+    <h1 class="logo-title">Visulan</h1>
+    <a class="top-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
+      👉 Zamów teraz
+    </a>
+  </header>
+
+  <hr>
 
   <div class="intro">
     <div class="text-block">
@@ -134,9 +171,13 @@
     </div>
   </div>
 
+  <hr>
+
   <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
     👉 Zamów z oficjalnej strony
   </a>
+
+  <hr>
 
   <h2>Czym jest Visulan Complex?</h2>
 
@@ -150,6 +191,8 @@
   <img class="fullwidth" src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2">
   <img class="fullwidth" src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
   <img class="fullwidth" src="../visulanimg/visulan4.jpg" alt="Zdjęcie 4">
+
+  <hr>
 
   <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
     👉 Przejdź do zamówienia
