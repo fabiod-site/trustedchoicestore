@@ -18,6 +18,7 @@
     h1 {
       font-size: 38px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     h2 {
@@ -25,18 +26,36 @@
       margin-top: 50px;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 30px auto;
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+      justify-content: center;
     }
 
-    ul {
+    .text-block {
+      flex: 1 1 400px;
+      min-width: 280px;
+    }
+
+    .text-block ul {
       margin-top: 20px;
     }
 
-    ul li {
+    .text-block ul li {
       margin-bottom: 12px;
+    }
+
+    .image-block {
+      flex: 0 0 300px;
+      text-align: center;
+    }
+
+    .image-block img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
     }
 
     .btn {
@@ -52,32 +71,48 @@
       text-align: center;
     }
 
+    img.fullwidth {
+      max-width: 100%;
+      display: block;
+      margin: 30px auto;
+    }
+
     footer {
       margin-top: 80px;
       font-size: 16px;
       text-align: center;
       color: #555;
     }
+
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1 style="text-align:center;">👁️ Visulan – naturalne wsparcie dla zdrowia oczu</h1>
+  <h1>👁️ Visulan – naturalne wsparcie dla zdrowia oczu</h1>
 
-  <img src="../visulanimg/visulanpng.png" alt="Visulan">
+  <div class="intro">
+    <div class="text-block">
+      <p>Visulan to kompleks naturalnych składników odżywczych, opracowany z myślą o osobach dbających o codzienny komfort widzenia.</p>
+      <ul>
+        <li><strong>Luteina</strong> – znana ze swojego działania ochronnego na siatkówkę</li>
+        <li><strong>Ekstrakt z jagód</strong> – tradycyjnie stosowany jako wsparcie dla funkcji wzroku</li>
+        <li><strong>Zeaksantyna</strong> – pomaga dbać o zdrowie mięśni oka i wspiera redukcję zmęczenia</li>
+        <li><strong>Witaminy i minerały</strong> – wspomagają kondycję naczyń i przejrzystość widzenia</li>
+      </ul>
+      <p>Dzięki starannie dobranej formule, Visulan może stanowić cenne uzupełnienie diety wspierającej zdrowie oczu – szczególnie dla osób narażonych na długotrwałe patrzenie w ekran czy zmęczenie wzroku.</p>
+      <p><em>➡️ Produkt nie zastępuje konsultacji okulistycznej. Efekty stosowania mogą się różnić u poszczególnych osób.</em></p>
+    </div>
 
-  <p>Visulan to kompleks naturalnych składników odżywczych, opracowany z myślą o osobach dbających o codzienny komfort widzenia.</p>
-
-  <ul>
-    <li><strong>Luteina</strong> – znana ze swojego działania ochronnego na siatkówkę</li>
-    <li><strong>Ekstrakt z jagód</strong> – tradycyjnie stosowany jako wsparcie dla funkcji wzroku</li>
-    <li><strong>Zeaksantyna</strong> – pomaga dbać o zdrowie mięśni oka i wspiera redukcję zmęczenia</li>
-    <li><strong>Witaminy i minerały</strong> – wspomagają kondycję naczyń i przejrzystość widzenia</li>
-  </ul>
-
-  <p>Dzięki starannie dobranej formule, Visulan może stanowić cenne uzupełnienie diety wspierającej zdrowie oczu – szczególnie dla osób narażonych na długotrwałe patrzenie w ekran czy zmęczenie wzroku.</p>
-
-  <p><em>➡️ Produkt nie zastępuje konsultacji okulistycznej. Efekty stosowania mogą się różnić u poszczególnych osób.</em></p>
+    <div class="image-block">
+      <img src="../visulanimg/visulanpng.png" alt="Visulan">
+    </div>
+  </div>
 
   <a class="btn" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Zamów z oficjalnej strony</a>
 
@@ -89,10 +124,10 @@
 
   <p>Produkt może być pomocnym elementem rutyny wspierającej zdrowie oczu, zwłaszcza w kontekście wyzwań cyfrowej rzeczywistości.</p>
 
-  <img src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1">
-  <img src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2">
-  <img src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
-  <img src="../visulanimg/visulan4.jpg" alt="Zdjęcie 4">
+  <img class="fullwidth" src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1">
+  <img class="fullwidth" src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2">
+  <img class="fullwidth" src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
+  <img class="fullwidth" src="../visulanimg/visulan4.jpg" alt="Zdjęcie 4">
 
   <a class="btn" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Przejdź do zamówienia</a>
 
