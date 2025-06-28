@@ -57,6 +57,7 @@
       0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
       50% { transform: translateY(-8px) scale(1.05); opacity: 0.9; }
     }
+
     .intro {
       display: flex;
       flex-wrap: wrap;
@@ -116,7 +117,6 @@
       transform: translateY(0);
     }
 
-    /* Depoimentos com imagens */
     .opinions-section {
       display: flex;
       flex-wrap: wrap;
@@ -156,6 +156,30 @@
       position: absolute;
       top: -10px;
       left: -10px;
+    }
+
+    .faq-section {
+      margin: 60px auto;
+      padding: 10px 0;
+      max-width: 900px;
+    }
+
+    .faq-section h2 {
+      font-size: 28px;
+      color: #1a1a1a;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #222;
     }
 
     footer {
@@ -224,7 +248,6 @@
   </style>
 </head>
 <body>
-
   <header>
     <h1 class="headline">Zobacz świat na nowo!</h1>
     <img src="../visulanimg/visulanpng.png" alt="Visulan" class="visulan-mobile-img">
@@ -256,13 +279,13 @@
   <hr>
 
   <h2>Czym jest Visulan Complex?</h2>
+
   <p>Visulan Complex to suplement diety opracowany z myślą o wsparciu codziennej troski o oczy. Jego formuła oparta jest na starannie dobranych składnikach pochodzenia naturalnego, które mogą wspierać ochronę wzroku i komfort widzenia.</p>
 
   <p>Dzięki połączeniu witamin, minerałów oraz ekstraktów roślinnych, kapsułki mogą stanowić wartościowe uzupełnienie diety osób, które spędzają dużo czasu przed ekranem komputera lub odczuwają dyskomfort związany ze zmęczeniem wzroku.</p>
 
   <p>Produkt może być pomocnym elementem rutyny wspierającej zdrowie oczu, zwłaszcza w kontekście wyzwań cyfrowej rzeczywistości.</p>
 
-  <!-- Depoimentos com imagens -->
   <div class="opinions-section">
     <div class="testimonial fade-in">
       <img src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1" class="testimonial-img">
@@ -293,13 +316,33 @@
 
   <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Przejdź do zamówienia</a>
 
+  <hr>
+
+  <section class="faq-section fade-in">
+    <h2>Często zadawane pytania i odpowiedzi</h2>
+
+    <div class="faq-item">
+      <p><strong>♻️ Jakie są efekty Visulan Complex?</strong></p>
+      <p>Produkt może wspierać ostrość widzenia, zmniejszać zmęczenie oczu i wspomagać ogólną kondycję wzroku.</p>
+    </div>
+
+    <div class="faq-item">
+      <p><strong>♻️ W jakim celu stosuje się Visulan Complex?</strong></p>
+      <p>Ten suplement diety został opracowany z myślą o wspieraniu zdrowia oczu i codziennego komfortu widzenia.</p>
+    </div>
+
+    <div class="faq-item">
+      <p><strong>♻️ Czy istnieje zamiennik Visulan Complex?</strong></p>
+      <p>Na rynku nie ma identycznego zamiennika kapsułek Visulan Complex, który oferowałby równie kompleksowe wsparcie dla wzroku.</p>
+    </div>
+  </section>
+
   <footer>
     © 2025 Trusted Choice Store – Wszelkie prawa zastrzeżone.<br>
     Strona ma charakter informacyjny i nie zastępuje konsultacji medycznej.<br>
     <a href="https://trustedchoicestore.store/privacypolicy">Privacy Policy</a>
   </footer>
 
-  <!-- JavaScript para efeito scroll -->
   <script>
     const faders = document.querySelectorAll('.fade-in');
     const appearOptions = {
