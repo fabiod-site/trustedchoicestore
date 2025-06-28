@@ -11,7 +11,7 @@
       padding: 40px;
       background: linear-gradient(to bottom, #f5faff, #d6e9ff);
       font-family: Arial, sans-serif;
-      font-size: 22px; /* Texto aumentado */
+      font-size: 22px;
       line-height: 1.9;
       color: #111;
     }
@@ -26,16 +26,13 @@
 
     .headline {
       font-size: 36px;
+      font-weight: bold;
       color: #d7263d;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
       letter-spacing: 1px;
-      animation: pulseText 1.8s infinite ease-in-out;
       margin: 0;
-    }
-
-    @keyframes pulseText {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.85; }
+      text-align: center;
+      flex: 1;
     }
 
     .visulan-mobile-img {
@@ -150,6 +147,7 @@
       header {
         flex-direction: column;
         gap: 15px;
+        text-align: center;
       }
 
       .intro {
@@ -167,7 +165,16 @@
 
       .headline {
         font-size: 32px;
-        text-align: center;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .visulan-mobile-img {
+        display: none !important;
+      }
+
+      .image-block {
+        display: block;
       }
     }
   </style>
@@ -227,3 +234,4 @@
   </footer>
 
   <script>
+    const
