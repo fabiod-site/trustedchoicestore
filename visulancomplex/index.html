@@ -18,17 +18,30 @@
 
     header {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       margin-bottom: 30px;
     }
 
-    .logo-title {
-      font-family: "Righteous", sans-serif;
-      font-weight: 400;
-      font-style: normal;
+    .visulan-mobile-img {
+      display: none;
+      max-width: 240px;
+      margin: 20px auto 10px;
+    }
+
+    .headline {
       font-size: 34px;
-      margin: 0;
+      text-align: center;
+      color: #d7263d;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+      animation: pulseText 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
     }
 
     .top-button {
@@ -66,10 +79,6 @@
       min-width: 280px;
     }
 
-    .text-block ul {
-      margin-top: 20px;
-    }
-
     .text-block ul li {
       margin-bottom: 12px;
     }
@@ -82,12 +91,10 @@
     .image-block img {
       width: 100%;
       max-width: 380px;
-      height: auto;
     }
 
     .cta-button {
       display: block;
-      width: fit-content;
       background-color: #1a6ed8;
       color: white;
       text-decoration: none;
@@ -95,7 +102,6 @@
       margin: 50px auto;
       font-size: 22px;
       border-radius: 10px;
-      text-align: center;
       animation: pulseJump 1.8s infinite ease-in-out;
       font-weight: bold;
       box-shadow: 0 0 12px rgba(26, 110, 216, 0.4);
@@ -113,10 +119,15 @@
       margin: 30px auto;
     }
 
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 50px 0 40px;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.appear {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     footer {
@@ -133,15 +144,10 @@
       text-decoration: none;
     }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-    }
-
-    .fade-in.appear {
-      opacity: 1;
-      transform: translateY(0);
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 50px 0 40px;
     }
 
     @media (max-width: 768px) {
@@ -156,7 +162,21 @@
       }
 
       .image-block {
-        width: 100%;
+        display: none;
+      }
+
+      .visulan-mobile-img {
+        display: block;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .visulan-mobile-img {
+        display: none !important;
+      }
+
+      .image-block {
+        display: block;
       }
     }
   </style>
@@ -164,11 +184,11 @@
 <body>
 
   <header>
-    <h1 class="logo-title">Visulan</h1>
-    <a class="top-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
-      👉 Zamów teraz
-    </a>
+    <img src="../visulanimg/visulanpng.png" alt="Visulan" class="visulan-mobile-img">
+    <a class="top-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Zamów teraz</a>
   </header>
+
+  <h2 class="headline">Zobacz świat na nowo!</h2>
 
   <hr>
 
@@ -183,7 +203,6 @@
       </ul>
       <p>Dzięki starannie dobranej formule, Visulan może stanowić cenne uzupełnienie diety wspierającej zdrowie oczu – szczególnie dla osób narażonych na długotrwałe patrzenie w ekran czy zmęczenie wzroku.</p>
     </div>
-
     <div class="image-block">
       <img src="../visulanimg/visulanpng.png" alt="Visulan">
     </div>
@@ -191,9 +210,7 @@
 
   <hr>
 
-  <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
-    👉 Zamów z oficjalnej strony
-  </a>
+  <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Zamów z oficjalnej strony</a>
 
   <hr>
 
@@ -211,33 +228,7 @@
 
   <hr>
 
-  <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">
-    👉 Przejdź do zamówienia
-  </a>
+  <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Przejdź do zamówienia</a>
 
   <footer>
-    © 2025 Trusted Choice Store – Wszelkie prawa zastrzeżone.<br>
-    Strona ma charakter informacyjny i nie zastępuje konsultacji medycznej.<br>
-    <a href="https://trustedchoicestore.store/privacypolicy">Privacy Policy</a>
-  </footer>
-
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('appear');
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
-
-</body>
-</html>
+    © 202
