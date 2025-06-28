@@ -57,7 +57,6 @@
       0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
       50% { transform: translateY(-8px) scale(1.05); opacity: 0.9; }
     }
-
     .intro {
       display: flex;
       flex-wrap: wrap;
@@ -106,12 +105,6 @@
       transform: scale(1.07);
     }
 
-    img.fullwidth {
-      max-width: 100%;
-      display: block;
-      margin: 40px auto;
-    }
-
     .fade-in {
       opacity: 0;
       transform: translateY(30px);
@@ -121,6 +114,48 @@
     .fade-in.appear {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Depoimentos com imagens */
+    .opinions-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      margin: 60px 0;
+    }
+
+    .testimonial {
+      display: flex;
+      flex: 1 1 300px;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .testimonial-img {
+      max-width: 180px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-text {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+      position: relative;
+    }
+
+    .testimonial-text::before {
+      content: "“";
+      font-size: 40px;
+      color: #ccc;
+      position: absolute;
+      top: -10px;
+      left: -10px;
     }
 
     footer {
@@ -166,15 +201,24 @@
       .headline {
         font-size: 32px;
       }
-    }
 
-    @media (min-width: 769px) {
-      .visulan-mobile-img {
-        display: none !important;
+      .opinions-section {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .image-block {
-        display: block;
+      .testimonial {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .testimonial-text {
+        margin-top: 10px;
+      }
+
+      .testimonial-img {
+        max-width: 100%;
       }
     }
   </style>
@@ -212,16 +256,38 @@
   <hr>
 
   <h2>Czym jest Visulan Complex?</h2>
-
   <p>Visulan Complex to suplement diety opracowany z myślą o wsparciu codziennej troski o oczy. Jego formuła oparta jest na starannie dobranych składnikach pochodzenia naturalnego, które mogą wspierać ochronę wzroku i komfort widzenia.</p>
 
   <p>Dzięki połączeniu witamin, minerałów oraz ekstraktów roślinnych, kapsułki mogą stanowić wartościowe uzupełnienie diety osób, które spędzają dużo czasu przed ekranem komputera lub odczuwają dyskomfort związany ze zmęczeniem wzroku.</p>
 
   <p>Produkt może być pomocnym elementem rutyny wspierającej zdrowie oczu, zwłaszcza w kontekście wyzwań cyfrowej rzeczywistości.</p>
 
-  <img class="fullwidth fade-in" src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1">
-  <img class="fullwidth fade-in" src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2">
-  <img class="fullwidth fade-in" src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3">
+  <!-- Depoimentos com imagens -->
+  <div class="opinions-section">
+    <div class="testimonial fade-in">
+      <img src="../visulanimg/visulan1.jpg" alt="Zdjęcie 1" class="testimonial-img">
+      <div class="testimonial-text">
+        <p>“Chciałbym podzielić się moim entuzjastycznym doświadczeniem ze stosowania Visulan Complex. Po kilku tygodniach regularnego stosowania zauważyłem znaczną poprawę wzroku. Jestem bardzo zadowolony z efektów!”</p>
+        <strong style="color: #1a6ed8;">– Marcel Pawlak, 45 lat, Gdańsk</strong>
+      </div>
+    </div>
+
+    <div class="testimonial fade-in">
+      <img src="../visulanimg/visulan2.jpg" alt="Zdjęcie 2" class="testimonial-img">
+      <div class="testimonial-text">
+        <p>“Na początku byłem sceptyczny, ale teraz jestem mile zaskoczony efektami. Moje oczy są mniej zmęczone i widzę znacznie wyraźniej niż wcześniej. Polecam Visulan Complex!”</p>
+        <strong style="color: #d7263d;">– Krzysztof Kamiński, 38 lat, Warszawa</strong>
+      </div>
+    </div>
+
+    <div class="testimonial fade-in">
+      <img src="../visulanimg/visulan3.jpg" alt="Zdjęcie 3" class="testimonial-img">
+      <div class="testimonial-text">
+        <p>“Visulan Complex to naprawdę rewelacyjny produkt! Odkąd zaczęłam go stosować, moje problemy ze wzrokiem stopniowo się zmniejszają. Widzę dużo wyraźniej i czuję się komfortowo na co dzień. Gorąco polecam każdemu!”</p>
+        <strong style="color: #f36b21;">– Monika Dąbrowska, 50 lat, Kraków</strong>
+      </div>
+    </div>
+  </div>
 
   <hr>
 
@@ -233,5 +299,25 @@
     <a href="https://trustedchoicestore.store/privacypolicy">Privacy Policy</a>
   </footer>
 
+  <!-- JavaScript para efeito scroll -->
   <script>
-    const
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+  </script>
+
+</body>
+</html>
