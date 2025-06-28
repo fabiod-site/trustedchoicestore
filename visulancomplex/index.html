@@ -11,16 +11,31 @@
       padding: 40px;
       background: linear-gradient(to bottom, #f5faff, #d6e9ff);
       font-family: Arial, sans-serif;
-      font-size: 20px;
-      line-height: 1.8;
+      font-size: 22px; /* Texto aumentado */
+      line-height: 1.9;
       color: #111;
     }
 
     header {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       margin-bottom: 30px;
+    }
+
+    .headline {
+      font-size: 36px;
+      color: #d7263d;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+      letter-spacing: 1px;
+      animation: pulseText 1.8s infinite ease-in-out;
+      margin: 0;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
     }
 
     .visulan-mobile-img {
@@ -29,28 +44,13 @@
       margin: 20px auto 10px;
     }
 
-    .headline {
-      font-size: 34px;
-      text-align: center;
-      color: #d7263d;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-      margin-bottom: 25px;
-      letter-spacing: 1px;
-      animation: pulseText 1.8s infinite ease-in-out;
-    }
-
-    @keyframes pulseText {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.05); opacity: 0.85; }
-    }
-
     .top-button {
       background-color: #1a6ed8;
       color: white;
       text-decoration: none;
-      padding: 14px 28px;
+      padding: 16px 30px;
       border-radius: 8px;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       animation: pulseJump 1.8s infinite ease-in-out;
       box-shadow: 0 0 10px rgba(26, 110, 216, 0.3);
@@ -59,11 +59,6 @@
     @keyframes pulseJump {
       0%, 100% { transform: translateY(0) scale(1); opacity: 1; }
       50% { transform: translateY(-8px) scale(1.05); opacity: 0.9; }
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-top: 50px;
     }
 
     .intro {
@@ -80,7 +75,7 @@
     }
 
     .text-block ul li {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .image-block {
@@ -98,14 +93,15 @@
       background-color: #1a6ed8;
       color: white;
       text-decoration: none;
-      padding: 20px 40px;
-      margin: 50px auto;
-      font-size: 22px;
+      padding: 22px 44px;
+      margin: 60px auto;
+      font-size: 24px;
       border-radius: 10px;
       animation: pulseJump 1.8s infinite ease-in-out;
       font-weight: bold;
       box-shadow: 0 0 12px rgba(26, 110, 216, 0.4);
       transition: transform 0.2s, background-color 0.3s;
+      text-align: center;
     }
 
     .cta-button:hover {
@@ -116,7 +112,7 @@
     img.fullwidth {
       max-width: 100%;
       display: block;
-      margin: 30px auto;
+      margin: 40px auto;
     }
 
     .fade-in {
@@ -132,7 +128,7 @@
 
     footer {
       margin-top: 80px;
-      font-size: 16px;
+      font-size: 18px;
       text-align: center;
       background-color: #f2f2f2;
       color: #555;
@@ -146,7 +142,7 @@
 
     hr {
       border: none;
-      border-top: 1px solid #ddd;
+      border-top: 1px solid #ccc;
       margin: 50px 0 40px;
     }
 
@@ -168,15 +164,10 @@
       .visulan-mobile-img {
         display: block;
       }
-    }
 
-    @media (min-width: 769px) {
-      .visulan-mobile-img {
-        display: none !important;
-      }
-
-      .image-block {
-        display: block;
+      .headline {
+        font-size: 32px;
+        text-align: center;
       }
     }
   </style>
@@ -184,11 +175,10 @@
 <body>
 
   <header>
+    <h1 class="headline">Zobacz świat na nowo!</h1>
     <img src="../visulanimg/visulanpng.png" alt="Visulan" class="visulan-mobile-img">
     <a class="top-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Zamów teraz</a>
   </header>
-
-  <h2 class="headline">Zobacz świat na nowo!</h2>
 
   <hr>
 
@@ -231,4 +221,9 @@
   <a class="cta-button" href="https://visulanofc-pl.doctormurin.com/l" target="_blank">👉 Przejdź do zamówienia</a>
 
   <footer>
-    © 202
+    © 2025 Trusted Choice Store – Wszelkie prawa zastrzeżone.<br>
+    Strona ma charakter informacyjny i nie zastępuje konsultacji medycznej.<br>
+    <a href="https://trustedchoicestore.store/privacypolicy">Privacy Policy</a>
+  </footer>
+
+  <script>
