@@ -22,6 +22,7 @@
       50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(0, 91, 143, 0.4); }
       100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 91, 143, 0.4); }
     }
+
     .btn-primary {
       display: inline-block;
       background: #005b8f;
@@ -43,6 +44,10 @@
       align-items: center;
       text-align: center;
     }
+    .hero img {
+      max-width: 250px;
+      margin-top: 1rem;
+    }
     .hero-content {
       max-width: 600px;
     }
@@ -57,10 +62,105 @@
       margin-bottom: 1.5rem;
       color: #333;
     }
-    .hero img {
-      max-width: 250px;
-      margin-top: 1rem;
+
+    #benefits {
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #fff8e1, #ffffff);
     }
+    #benefits h2 {
+      text-align: center;
+      color: #005b8f;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    #benefits ul {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #benefits li {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    #benefits li::before {
+      content: "✓";
+      color: #28a745;
+      display: inline-block;
+      width: 1.2em;
+    }
+
+    #carousel {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+      background: #fff;
+      flex-wrap: wrap;
+    }
+    #carousel img {
+      max-width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    #order-info {
+      padding: 2rem 1rem;
+      background: linear-gradient(135deg, #fff3e0, #ffffff);
+    }
+    #order-info h2 {
+      text-align: center;
+      color: #005b8f;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    #order-info p {
+      max-width: 700px;
+      margin: 0.5rem auto;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    #testimonials {
+      padding: 2rem 1rem;
+      background: #fff;
+    }
+    #testimonials h2 {
+      text-align: center;
+      color: #005b8f;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .testimonial {
+      max-width: 600px;
+      margin: 1rem auto;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      background: #fafafa;
+    }
+    .testimonial p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .testimonial .author {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #005b8f;
+    }
+
+    #cta-final {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #777;
+      background: #f1f1f1;
+    }
+    footer a { color: #005b8f; }
 
     @media(min-width: 768px) {
       .hero {
@@ -118,31 +218,4 @@
     <h2>Mărturii reale de la utilizatori</h2>
     <div class="testimonial">
       <p>"Mă simt mult mai liberă să mă mișc! După 10 zile de utilizare, diferența este enormă."</p>
-      <div class="author">— Ekaterina M., 42 ani, Timișoara</div>
-    </div>
-
-    <div class="testimonial">
-      <p>"Am simțit alinarea durerii în doar 8 minute și inflamația a dispărut aproape complet în 5 zile."</p>
-      <div class="author">— Ion T., 37 ani, Timișoara</div>
-    </div>
-
-    <div class="testimonial">
-      <p>"După 35 de zile de aplicare, pot merge 6 km fără niciun disconfort. Mă simt renovată!"</p>
-      <div class="author">— Alina N., 35 ani, Constanța</div>
-    </div>
-  </section>
-
-  <section id="cta-final">
-    <a href="https://hondrosol_official_ro.doctormurin.com/l" class="btn-primary">
-      Comandă Acum – Stoc Limitat
-    </a>
-  </section>
-
-  <footer>
-    <p>*Rezultatele pot varia de la o persoană la alta.</p>
-    <p>Avertisment: Acest site are scop informativ și nu oferă sfaturi medicale, diagnostice sau tratamente. Consultați întotdeauna un specialist înainte de a începe orice produs nou.</p>
-    <p>Pentru detalii despre confidențialitatea datelor, accesează <a href="https://trustedchoicestore.store/privacypolicy/" target="_blank">Politica de confidențialitate</a>.</p>
-  </footer>
-
-</body>
-</html>
+      <div class="author">
