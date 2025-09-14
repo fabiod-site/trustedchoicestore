@@ -18,11 +18,10 @@
     ul { list-style: none; padding-left: 1rem; }
 
     @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 91, 143, 0.4); }
-      50% { transform: scale(1.05); box-shadow: 0 0 10px rgba(0, 91, 143, 0.4); }
-      100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 91, 143, 0.4); }
+      0%   { transform: scale(1);    box-shadow: 0 0 0 rgba(0,91,143,0.4); }
+      50%  { transform: scale(1.05); box-shadow: 0 0 10px rgba(0,91,143,0.4); }
+      100% { transform: scale(1);    box-shadow: 0 0 0 rgba(0,91,143,0.4); }
     }
-
     .btn-primary {
       display: inline-block;
       background: #005b8f;
@@ -44,13 +43,7 @@
       align-items: center;
       text-align: center;
     }
-    .hero img {
-      max-width: 250px;
-      margin-top: 1rem;
-    }
-    .hero-content {
-      max-width: 600px;
-    }
+    .hero-content { max-width: 600px; }
     header h1 {
       color: #005b8f;
       font-size: 3rem;
@@ -62,6 +55,19 @@
       margin-bottom: 1.5rem;
       color: #333;
     }
+    .hero img {
+      max-width: 250px;
+      margin-top: 1rem;
+    }
+    @media(min-width: 768px) {
+      .hero {
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+        gap: 2rem;
+      }
+      .hero-content { max-width: 400px; }
+    }
 
     #benefits {
       padding: 2rem 1rem;
@@ -72,10 +78,6 @@
       color: #005b8f;
       margin-bottom: 1rem;
       font-size: 1.5rem;
-    }
-    #benefits ul {
-      max-width: 600px;
-      margin: 0 auto;
     }
     #benefits li {
       font-size: 1rem;
@@ -118,61 +120,6 @@
       font-size: 1rem;
       color: #444;
     }
-
-    #testimonials {
-      padding: 2rem 1rem;
-      background: #fff;
-    }
-    #testimonials h2 {
-      text-align: center;
-      color: #005b8f;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-    .testimonial {
-      max-width: 600px;
-      margin: 1rem auto;
-      padding: 1rem;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      background: #fafafa;
-    }
-    .testimonial p {
-      font-size: 0.95rem;
-      color: #333;
-    }
-    .testimonial .author {
-      margin-top: 0.5rem;
-      font-weight: bold;
-      color: #005b8f;
-    }
-
-    #cta-final {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #fff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-      color: #777;
-      background: #f1f1f1;
-    }
-    footer a { color: #005b8f; }
-
-    @media(min-width: 768px) {
-      .hero {
-        flex-direction: row;
-        justify-content: center;
-        text-align: left;
-        gap: 2rem;
-      }
-      .hero-content {
-        max-width: 400px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -182,9 +129,7 @@
       <div class="hero-content">
         <h1>Hondro Sol</h1>
         <p>Ameliorare rapidă a durerii, mobilitate crescută și reducerea rigidității – direct la tine acasă.</p>
-        <a href="https://hondrosol_official_ro.doctormurin.com/l" class="btn-primary">
-          Comandă Acum – Ofertă Limitată
-        </a>
+        <a href="https://hondrosol_official_ro.doctormurin.com/l" class="btn-primary">Comandă Acum – Ofertă Limitată</a>
       </div>
       <img src="https://fabiod-site.github.io/trustedchoicestore/hondrosolimg/Produto.png" alt="Hondro Sol Spray">
     </div>
@@ -216,6 +161,34 @@
 
   <section id="testimonials">
     <h2>Mărturii reale de la utilizatori</h2>
+
     <div class="testimonial">
       <p>"Mă simt mult mai liberă să mă mișc! După 10 zile de utilizare, diferența este enormă."</p>
-      <div class="author">
+      <div class="author">— Ekaterina M., 42 ani, Timișoara</div>
+    </div>
+
+    <div class="testimonial">
+      <p>"Am simțit alinarea durerii în doar 8 minute și inflamația a dispărut aproape complet în 5 zile."</p>
+      <div class="author">— Ion T., 37 ani, Timișoara</div>
+    </div>
+
+    <div class="testimonial">
+      <p>"După 35 de zile de aplicare, pot merge 6 km fără niciun disconfort. Mă simt renovată!"</p>
+      <div class="author">— Alina N., 35 ani, Constanța</div>
+    </div>
+  </section>
+
+  <section id="cta-final">
+    <a href="https://hondrosol_official_ro.doctormurin.com/l" class="btn-primary">
+      Comandă Acum – Stoc Limitat
+    </a>
+  </section>
+
+  <footer>
+    <p>*Rezultatele pot varia de la o persoană la alta.</p>
+    <p>Avertisment: Acest site are scop informativ și nu oferă sfaturi medicale, diagnostice sau tratamente. Consultați întotdeauna un specialist înainte de a începe orice produs nou.</p>
+    <p>Pentru detalii despre confidențialitatea datelor, accesează <a href="https://trustedchoicestore.store/privacypolicy/" target="_blank">Politica de confidențialitate</a>.</p>
+  </footer>
+
+</body>
+</html>
