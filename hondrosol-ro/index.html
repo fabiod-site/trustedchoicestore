@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif;
       color: #333;
       line-height: 1.6;
-      background: #fff;
+      background: linear-gradient(to bottom, #fff8e1 0%, #ffffff 100%);
     }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; padding-left: 1rem; }
@@ -36,7 +36,6 @@
 
     header {
       padding: 3rem 1rem 2rem;
-      background: linear-gradient(135deg, #ffe0b2, #ffffff);
     }
     .hero {
       display: flex;
@@ -63,24 +62,27 @@
       color: #333;
     }
 
-    #benefits {
+    #benefits, #order-info, #carousel {
       padding: 2rem 1rem;
-      background: linear-gradient(135deg, #fff8e1, #ffffff);
     }
-    #benefits h2 {
+
+    #benefits h2, #order-info h2, #testimonials h2 {
       text-align: center;
       color: #005b8f;
       margin-bottom: 1rem;
       font-size: 1.5rem;
     }
+
     #benefits ul {
       max-width: 600px;
       margin: 0 auto;
     }
+
     #benefits li {
       font-size: 1rem;
       margin-bottom: 0.75rem;
     }
+
     #benefits li::before {
       content: "✓";
       color: #28a745;
@@ -92,26 +94,15 @@
       display: flex;
       justify-content: center;
       gap: 1rem;
-      padding: 2rem 1rem;
-      background: #fff;
       flex-wrap: wrap;
     }
+
     #carousel img {
       max-width: 200px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    #order-info {
-      padding: 2rem 1rem;
-      background: linear-gradient(135deg, #fff3e0, #ffffff);
-    }
-    #order-info h2 {
-      text-align: center;
-      color: #005b8f;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
     #order-info p {
       max-width: 700px;
       margin: 0.5rem auto;
@@ -121,26 +112,23 @@
 
     #testimonials {
       padding: 2rem 1rem;
-      background: #fff;
     }
-    #testimonials h2 {
-      text-align: center;
-      color: #005b8f;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
+
     .testimonial {
       max-width: 600px;
       margin: 1rem auto;
       padding: 1rem;
       border: 1px solid #ddd;
       border-radius: 4px;
-      background: #fafafa;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+
     .testimonial p {
       font-size: 0.95rem;
       color: #333;
     }
+
     .testimonial .author {
       margin-top: 0.5rem;
       font-weight: bold;
@@ -150,7 +138,6 @@
     #cta-final {
       text-align: center;
       padding: 2rem 1rem;
-      background: #fff;
     }
 
     footer {
@@ -160,6 +147,7 @@
       color: #777;
       background: #f1f1f1;
     }
+
     footer a { color: #005b8f; }
 
     @media(min-width: 768px) {
@@ -182,9 +170,7 @@
       <div class="hero-content">
         <h1>Hondro Sol</h1>
         <p>Ameliorare rapidă a durerii, mobilitate crescută și reducerea rigidității – direct la tine acasă.</p>
-        <a href="https://hondrosol_official_ro.doctormurin.com/l" class="btn-primary">
-          Comandă Acum – Ofertă Limitată
-        </a>
+        <a href="https://hondrosol_official_ro.doctormurin.com/l" class="btn-primary">Comandă Acum – Ofertă Limitată</a>
       </div>
       <img src="https://fabiod-site.github.io/trustedchoicestore/hondrosolimg/Produto.png" alt="Hondro Sol Spray">
     </div>
@@ -213,9 +199,10 @@
     <p>Procesul de comandă este rapid și sigur: completezi formularul scurt de pe pagina oficială, iar un reprezentant te va contacta telefonic pentru detalii despre livrare și plata preferată.</p>
     <p>Așa te asiguri că primești un produs original, direct din sursă.</p>
   </section>
-
+    
   <section id="testimonials">
     <h2>Mărturii reale de la utilizatori</h2>
+
     <div class="testimonial">
       <p>"Mă simt mult mai liberă să mă mișc! După 10 zile de utilizare, diferența este enormă."</p>
       <div class="author">— Ekaterina M., 42 ani, Timișoara</div>
@@ -238,11 +225,3 @@
     </a>
   </section>
 
-  <footer>
-    <p>*Rezultatele pot varia de la o persoană la alta.</p>
-    <p>Avertisment: Acest site are scop informativ și nu oferă sfaturi medicale, diagnostice sau tratamente. Consultați întotdeauna un specialist înainte de a începe orice produs nou.</p>
-    <p>Pentru detalii despre confidențialitatea datelor, accesează <a href="https://trustedchoicestore.store/privacypolicy/" target="_blank">Politica de confidențialitate</a>.</p>
-  </footer>
-
-</body>
-</html>
