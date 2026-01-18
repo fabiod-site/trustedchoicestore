@@ -17,7 +17,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             color: #1e293b;
             line-height: 1.6;
         }
@@ -28,8 +28,8 @@
             text-align: center;
         }
         .header h1 {
-            color: #0369a1;
-            font-size: 32px;
+            color: #0284c7;
+            font-size: 30px;
             line-height: 1.2;
             margin-bottom: 15px;
         }
@@ -37,21 +37,42 @@
             font-size: 18px;
             color: #475569;
         }
-        .product-img {
+        /* Estilo para a imagem transparente do topo */
+        .hero-img {
+            width: 100%;
+            max-width: 350px;
+            margin: 20px 0;
+            /* O drop-shadow funciona melhor em imagens transparentes que o box-shadow */
+            filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.15));
+        }
+        /* Estilo para as fotos reais (com borda) */
+        .lifestyle-img {
             width: 100%;
             max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             margin: 30px 0;
+        }
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            width: 45%; 
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            object-fit: cover;
         }
         .benefits {
             text-align: left;
-            background: rgba(255, 255, 255, 0.8);
+            background: #ffffff;
             padding: 25px;
             border-radius: 16px;
             margin-bottom: 35px;
-            backdrop-filter: blur(5px);
-            border: 1px solid #bae6fd;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
         .benefits ul {
             list-style: none;
@@ -83,6 +104,7 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
+            margin-bottom: 40px;
         }
         .cta-button:hover {
             background-color: #0369a1;
@@ -90,10 +112,10 @@
             box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.4);
         }
         footer {
-            margin-top: 60px;
+            margin-top: 40px;
             font-size: 13px;
             color: #64748b;
-            border-top: 1px solid #e2e8f0;
+            border-top: 1px solid #cbd5e1;
             padding-top: 20px;
         }
         footer a { 
@@ -101,11 +123,11 @@
             text-decoration: none; 
             margin: 0 8px; 
         }
-        footer a:hover { text-decoration: underline; }
         .disclaimer {
             font-size: 11px;
-            margin-top: 25px;
+            margin-top: 20px;
             line-height: 1.4;
+            color: #94a3b8;
         }
     </style>
 </head>
@@ -114,17 +136,29 @@
     <div class="container">
         <header class="header">
             <h1>Απολαύστε ξανά την καθαρότητα των ήχων</h1>
-            <p>Η φυσική μέθοδος για την υποστήριξη της ακουστικής σας ευεξίας με το Earlick Forte.</p>
+            <p>Η φυσική λύση Earlick Forte για την υποστήριξη της ακοής.</p>
         </header>
 
-        <img src="earlickimg/2.webp" alt="Earlick Forte" class="product-img">
+        <img src="earlickimg/1.webp" alt="Earlick Forte Original" class="hero-img">
 
         <div class="benefits">
+            <h2 style="color: #0369a1; font-size: 20px; margin-top: 0;">Γιατί ξεχωρίζει;</h2>
             <ul>
-                <li><strong>100% Φυσικά Συστατικά:</strong> Μια ασφαλής επιλογή για καθημερινή χρήση.</li>
-                <li><strong>Ενισχυμένη Σύνθεση:</strong> Σχεδιασμένο για μέγιστη απορρόφηση.</li>
-                <li><strong>Ποιότητα Ζωής:</strong> Βοηθά στην καλύτερη αντίληψη των καθημερινών ήχων.</li>
+                <li><strong>Φυσική Σύνθεση:</strong> Ασφαλής και αποτελεσματική φόρμουλα.</li>
+                <li><strong>Εύκολη Εφαρμογή:</strong> Ιδανικό για καθημερινή χρήση.</li>
+                <li><strong>Άμεσα Αποτελέσματα:</strong> Χιλιάδες ικανοποιημένοι πελάτες.</li>
             </ul>
+        </div>
+
+        <img src="earlickimg/2.webp" alt="Earlick Forte na mão" class="lifestyle-img">
+
+        <p style="font-size: 18px; font-weight: 500; margin-bottom: 20px;">
+            Δείτε τι περιλαμβάνει η συσκευασία:
+        </p>
+
+        <div class="image-gallery">
+            <img src="earlickimg/3.webp" alt="Earlick Forte Detalhe" class="gallery-item">
+            <img src="earlickimg/4.webp" alt="Earlick Forte Uso" class="gallery-item">
         </div>
 
         <a href="https://earlick-gr-ofc.doctorbuyer.com/l/?sub1={campaignid}&sub2={adgroupid}&sub3={keyword}&sub4={creative}" class="cta-button">
