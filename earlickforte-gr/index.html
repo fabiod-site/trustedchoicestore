@@ -18,108 +18,129 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
-            color: #333;
+            color: #1e293b;
             line-height: 1.6;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
         }
-        .header {
-            padding: 20px 0;
-        }
-        h1 {
+        .header h1 {
             color: #0369a1;
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+        .header p {
+            font-size: 18px;
+            color: #475569;
         }
         .product-img {
             width: 100%;
-            max-width: 400px;
-            border-radius: 15px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
         }
         .benefits {
             text-align: left;
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 35px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #bae6fd;
         }
         .benefits ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .benefits li {
-            margin-bottom: 10px;
-            padding-left: 30px;
+            margin-bottom: 15px;
+            padding-left: 35px;
             position: relative;
+            font-size: 17px;
         }
         .benefits li::before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: #0ea5e9;
+            color: #0284c7;
             font-weight: bold;
+            font-size: 20px;
         }
         .cta-button {
-            display: inline-block;
+            display: block;
             background-color: #0284c7;
             color: white;
-            padding: 18px 35px;
+            padding: 22px 30px;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             border-radius: 50px;
-            transition: transform 0.2s, background-color 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.3);
         }
         .cta-button:hover {
             background-color: #0369a1;
-            transform: scale(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.4);
         }
         footer {
-            margin-top: 50px;
-            font-size: 12px;
+            margin-top: 60px;
+            font-size: 13px;
             color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 20px;
         }
-        footer a { color: #64748b; text-decoration: none; margin: 0 10px; }
+        footer a { 
+            color: #0284c7; 
+            text-decoration: none; 
+            margin: 0 8px; 
+        }
+        footer a:hover { text-decoration: underline; }
+        .disclaimer {
+            font-size: 11px;
+            margin-top: 25px;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="header">
-            <h1>Αποκαταστήστε την ποιότητα της ακοής σας φυσικά</h1>
-            <p>Ανακαλύψτε τη δύναμη του Earlick Forte – Η προηγμένη φόρμουλα για καθαρό ήχο.</p>
-        </div>
+        <header class="header">
+            <h1>Απολαύστε ξανά την καθαρότητα των ήχων</h1>
+            <p>Η φυσική μέθοδος για την υποστήριξη της ακουστικής σας ευεξίας με το Earlick Forte.</p>
+        </header>
 
         <img src="earlickimg/2.webp" alt="Earlick Forte" class="product-img">
 
         <div class="benefits">
             <ul>
-                <li><strong>Φυσική Σύνθεση:</strong> Εκχυλίσματα βοτάνων και βιταμίνες.</li>
-                <li><strong>Προστασία:</strong> Βοηθά στην προστασία των κυττάρων του αυτιού.</li>
-                <li><strong>Καθαρότητα:</strong> Βελτιώνει τη συγκέντρωση και την αντίληψη των ήχων.</li>
+                <li><strong>100% Φυσικά Συστατικά:</strong> Μια ασφαλής επιλογή για καθημερινή χρήση.</li>
+                <li><strong>Ενισχυμένη Σύνθεση:</strong> Σχεδιασμένο για μέγιστη απορρόφηση.</li>
+                <li><strong>Ποιότητα Ζωής:</strong> Βοηθά στην καλύτερη αντίληψη των καθημερινών ήχων.</li>
             </ul>
         </div>
 
         <a href="https://earlick-gr-ofc.doctorbuyer.com/l/?sub1={campaignid}&sub2={adgroupid}&sub3={keyword}&sub4={creative}" class="cta-button">
-            ΔΕΙΤΕ ΤΗΝ ΠΡΟΣΦΟΡΑ ΕΔΩ
+            ΠΑΡΑΓΓΕΙΛΕΤΕ ΤΩΡΑ ΜΕ ΕΚΠΤΩΣΗ
         </a>
 
         <footer>
             <p>© 2026 Earlick Forte - Trusted Choice Store</p>
             <p>
-                <a href="politica-privacidade.html">Πολιτική Απορρήτου</a> | 
-                <a href="termos.html">Όροι Χρήσης</a>
+                <a href="privacypolicy/politica-privacidade.html">Πολιτική Απορρήτου</a> | 
+                <a href="privacypolicy/termos.html">Όροι Χρήσης</a>
             </p>
-            <p style="font-size: 10px; margin-top: 20px;">
-                Αυτό το προϊόν δεν προορίζεται για τη διάγνωση, τη θεραπεία ή την πρόληψη οποιασδήποτε νόσου.
-            </p>
+            <div class="disclaimer">
+                Αποποίηση ευθύνης: Αυτό το προϊόν είναι συμπλήρωμα διατροφής. Τα αποτελέσματα ενδέχεται να διαφέρουν από άτομο σε άτομο. 
+                Συμβουλευτείτε το γιατρό σας πριν από τη χρήση.
+            </div>
         </footer>
     </div>
 
