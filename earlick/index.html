@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Earlick Forte — Προσφορά Προπαραγγελίας</title>
+  <title>Earlick Forte — Υποστήριξη Φυσικής Άνεσης Ακοής</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.ico" type="image/x-icon">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
@@ -29,103 +33,174 @@
     .hero-left{flex:1;min-width:300px;}
     .hero-right img{max-width:320px;width:100%;border-radius:8px;}
     h1{font-size:36px;color:#05204a;margin:0 0 12px;}
-    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-size:16px;}
+    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-size:16px;margin:10px 0;}
+    .btn-cta:hover{background:linear-gradient(90deg,#ff8a5b,#ff6b35);}
     main{display:flex;flex-wrap:wrap;gap:32px;padding:40px 0;}
     .content{flex:2;min-width:360px;}
     aside{flex:1;min-width:300px;}
     .card{background:#fff;border-radius:12px;padding:22px;margin-bottom:20px;box-shadow:0 6px 18px rgba(0,0,0,0.04);}
     footer{background:rgba(0,82,153,0.05);padding:24px 0;text-align:center;margin-top:24px;}
+    .urgency-banner{background:linear-gradient(90deg,#ff4757,#ff6b81);color:white;padding:12px;text-align:center;border-radius:8px;margin:20px 0;font-weight:600;}
+    .benefit-item{display:flex;align-items:center;gap:12px;margin:12px 0;}
+    .benefit-icon{color:#ff6b35;font-size:20px;}
+    .price-old{text-decoration:line-through;color:#888;font-size:18px;}
+    .price-new{color:#ff6b35;font-size:28px;font-weight:700;}
   </style>
 </head>
 <body>
   <div class="site-wrap">
+    
+    <!-- URGENCY BANNER -->
+    <div class="urgency-banner">
+      ⚡ Προσφορά περιορισμένου χρόνου | Μόνο σήμερα 20.01.2026
+    </div>
+
     <!-- HERO -->
     <header class="hero">
       <div class="hero-left">
-        <h1>Earlick Forte — Υποστήριξη ακουστικής άνεσης</h1>
-        <p>Φυσική σύνθεση για καθημερινή ευεξία και άνεση 🎶</p>
-        <button class="btn-cta" onclick="handleOrderClick()">🛒 Παραγγελία τώρα — €39</button>
+        <h1>Earlick Forte — Νέα Προσέγγιση στη Φυσική Υποστήριξη Ακοής</h1>
+        <p>Σύνθεση βοτανικών εκχυλισμάτων για καθημερινή άνεση και ευεξία της ακοής</p>
+        <button class="btn-cta" onclick="handleOrderClick()">🛒 Παραγγελία τώρα — <del>EUR78</del> <strong>EUR39</strong></button>
+        <p style="font-size:14px;color:#666;">⚠️ Προσοχή: Συμβουλευτείτε ειδικό πριν τη χρήση αν έχετε ιατρικά προβλήματα</p>
       </div>
       <div class="hero-right">
         <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.webp" alt="Earlick Forte" />
       </div>
     </header>
+
     <!-- MAIN -->
     <main>
       <section class="content">
+        
+        <!-- BENEFÍCIOS -->
         <div class="card">
-          <h2>Γιατί να επιλέξετε</h2>
-          <p>Προηγμένη φυτική φόρμουλα για ακουστική άνεση.</p>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/2.webp" alt="Benefícios Earlick Forte" style="max-width:200px;margin-top:10px;" />
+          <h2>Πώς το Earlick Forte μπορεί να υποστηρίξει την άνεσή σας</h2>
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <div><strong>Υποστήριξη ακουστικής άνεσης</strong> - Φυσική σύνθεση για καθημερινή ευεξία</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <div><strong>Βοτανικά συστατικά</strong> - Φυτικά εκχυλίσματα που χρησιμοποιούνται παραδοσιακά</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <div><strong>Υποστήριξη νευρικού συστήματος</strong> - Συμβάλλει στην ηρεμία και ισορροπία</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <div><strong>Κύκλος ύπνου-αφύπνισης</strong> - Υποστηρίζει φυσιολογικό ρυθμό</div>
+          </div>
         </div>
 
+        <!-- PROBLEMAS COMUNS (SEM DIAGNÓSTICO) -->
         <div class="card">
-          <h2>Κύρια οφέλη</h2>
+          <h2>Συνηθισμένες καταστάσεις που ενδιαφέρουν πολλούς</h2>
+          <p>Πολλοί άνθρωποι αναζητούν υποστήριξη για:</p>
           <ul>
-            <li>Υποστήριξη ακουστικής άνεσης</li>
-            <li>Φυσικά συστατικά</li>
-            <li>Ηρεμία νευρικού συστήματος</li>
+            <li>Αίσθηση πίεσης ή άνεσης στα αυτιά</li>
+            <li>Δυσφορία σε περιβάλλοντα με υψηλό θόρυβο</li>
+            <li>Έντονη καθημερινότητα που επηρεάζει τη γενική ευεξία</li>
+            <li>Προσαρμογή σε νέες ακουστικές εμπειρίες</li>
           </ul>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/3.webp" alt="Conforto auditivo" style="max-width:200px;margin-top:10px;" />
+          <p><em>Το Earlick Forte μπορεί να προσφέρει υποστήριξη σε αυτές τις καθημερινές καταστάσεις.</em></p>
         </div>
 
+        <!-- TECNOLOGIA (SEM ALEGAÇÕES) -->
         <div class="card">
-          <h2>Σύνθεση</h2>
+          <h2>Προσέγγιση με βάση τη φύση</h2>
+          <p>Το Earlick Forte αναπτύχθηκε με έμφαση σε φυσικά συστατικά που χρησιμοποιούνται ευρέως για γενική ευεξία:</p>
           <ul>
-            <li>Spirulina</li>
-            <li>Κανέλα</li>
-            <li>Δεντρολίβανο</li>
-            <li>Ginseng</li>
+            <li><strong>Spirulina Platensis</strong> - Αλγή πλούσια σε θρεπτικά συστατικά</li>
+            <li><strong>Κανέλα</strong> - Φυτικό συστατικό με παραδοσιακή χρήση</li>
+            <li><strong>Κάστανο & Δεντρολίβανο</strong> - Βοτανικά εκχυλίσματα</li>
+            <li><strong>Τσάι δέντρου & Ginseng</strong> - Φυτικά συστατικά για ενέργεια</li>
           </ul>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/4.webp" alt="Ingredientes naturais" style="max-width:200px;margin-top:10px;" />
+          <p><em>Όλα τα συστατικά επιλέχθηκαν για τη φυσική τους σύσταση και παραδοσιακή χρήση.</em></p>
         </div>
 
+        <!-- COMO FUNCIONA -->
         <div class="card">
           <h2>Πώς να χρησιμοποιήσετε</h2>
-          <ol>
-            <li>1 κάψουλα/ημέρα</li>
-            <li>Συνδυάστε με καλές συνήθειες</li>
-          </ol>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/5.webp" alt="Modo de uso" style="max-width:200px;margin-top:10px;" />
-          <button class="btn-cta" onclick="handleOrderClick()" style="margin-top:10px;">🛒 Ξεκινήστε σήμερα</button>
+          <div style="display:flex;gap:20px;flex-wrap:wrap;margin:20px 0;">
+            <div style="flex:1;min-width:200px;text-align:center;">
+              <div style="background:#e6f7ff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;">1</div>
+              <p>1 κάψουλα ημερησίως με νερό</p>
+            </div>
+            <div style="flex:1;min-width:200px;text-align:center;">
+              <div style="background:#e6f7ff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;">2</div>
+              <p>Συνδυάστε με ήρεμη καθημερινότητα</p>
+            </div>
+            <div style="flex:1;min-width:200px;text-align:center;">
+              <div style="background:#e6f7ff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;">3</div>
+              <p>Συνεπής χρήση για καλύτερη εμπειρία</p>
+            </div>
+          </div>
+          <button class="btn-cta" onclick="handleOrderClick()">🛒 Ξεκινήστε τη φυσική σας υποστήριξη</button>
         </div>
 
+        <!-- ESPECIALISTA (SEM RECOMENDAÇÃO MÉDICA) -->
         <div class="card">
-          <h2>Σχόλια πελατών</h2>
-          <p>«Αισθάνομαι πιο ήρεμη»</p>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/6.webp" alt="Depoimento cliente" style="max-width:200px;margin-top:10px;" />
+          <h2>Πληροφορίες για τη σύνθεση</h2>
+          <p>Η σύνθεση του Earlick Forte περιλαμβάνει βοτανικά εκχυλίσματα που μελετήθηκαν για τη γενική τους ωφέλεια. Η αλληλεπίδραση φυτικών συστατικών μπορεί να προσφέρει ολοκληρωμένη υποστήριξη.</p>
+          <p><em>"Τα φυτικά προϊόντα με πολυσύνθετες φόρμουλες αξίζουν προσοχής για τη δυνητική τους συμβολή στην καθημερινή ευεξία."</em></p>
         </div>
 
-        <div class="card">
-          <h2>Σημαντικές πληροφορίες</h2>
-          <p>Συμβουλευτείτε γιατρό πριν τη χρήση αν έχετε προβλήματα ακοής.</p>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/7.webp" alt="Informações importantes" style="max-width:200px;margin-top:10px;" />
-        </div>
       </section>
 
       <aside>
-        <div class="card">
-          <h2>Προσφορά</h2>
-          <p><del>EUR78</del> <strong>EUR39</strong></p>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Oferta especial" style="max-width:200px;margin-top:10px;" />
-          <button class="btn-cta" onclick="handleOrderClick()" style="margin-top:10px;">🛒 Παραγγελία τώρα</button>
+        <!-- OFERTA -->
+        <div class="card" style="text-align:center;">
+          <h2>Προσφορά Περιορισμένου Χρόνου</h2>
+          <p style="color:#888;margin-bottom:5px;">Τιμή λιανικής:</p>
+          <div class="price-old">EUR78</div>
+          <p style="color:#ff6b35;margin:10px 0;">ΕΙΔΙΚΗ ΤΙΜΗ ΠΑΡΑΓΓΕΛΙΑΣ:</p>
+          <div class="price-new">EUR39</div>
+          <button class="btn-cta" onclick="handleOrderClick()" style="width:100%;margin:20px 0;">🛒 Παραγγελία τώρα -50%</button>
+          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Προσφορά" style="max-width:100%;border-radius:8px;" />
         </div>
 
+        <!-- GARANTIA -->
         <div class="card">
           <h2>Εγγύηση & Αποστολή</h2>
-          <p>Αποστολή εντός 3-7 ημερών. Εγγύηση επιστροφής 30 ημερών.</p>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/9.webp" alt="Envio e garantia" style="max-width:200px;margin-top:10px;" />
+          <div class="benefit-item">
+            <div class="benefit-icon">🚚</div>
+            <div><strong>Γρήγορη αποστολή:</strong> 3-7 εργάσιμες ημέρες</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">✓</div>
+            <div><strong>Εγγύηση ικανοποίησης:</strong> 30 ημέρες</div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">💳</div>
+            <div><strong>Ασφαλής πληρωμή:</strong> Μετά την παραλαβή</div>
+          </div>
+          <p style="font-size:14px;color:#666;margin-top:15px;">*Η αποστολή έχει επιπλέον κόστος που διευκρινίζεται κατά την παραγγελία</p>
         </div>
+
+        <!-- CONTRAINDICAÇÕES -->
+        <div class="card" style="background:#fff8f8;border:1px solid #ffcccc;">
+          <h2 style="color:#d63031;">Σημαντικές Πληροφορίες</h2>
+          <ul>
+            <li>Δεν είναι φάρμακο. Συμπλήρωμα διατροφής.</li>
+            <li>Μη προορίζεται για διάγνωση, θεραπεία ή πρόληψη ασθενειών.</li>
+            <li>Συμβουλευτείτε ειδικό πριν τη χρήση εάν έχετε ιατρικά προβλήματα.</li>
+            <li>Μη χρησιμοποιείται από έγκυες ή θηλάζουσες.</li>
+            <li>Διατηρείται μακριά από παιδιά.</li>
+          </ul>
+        </div>
+
       </aside>
     </main>
 
     <!-- FOOTER -->
     <footer>
       <div class="muted">© 2026 Trusted Choice Store — Earlick Forte</div>
-      <a href="/privacypolicy/index.html">Πολιτική Απορρήτου</a>
-      <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/10.webp" alt="Rodapé imagem extra" style="max-width:200px;margin-top:10px;" />
-      <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/11.webp" alt="Rodapé imagem extra 2" style="max-width:200px;margin-top:10px;" />
-      <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/12.webp" alt="Rodapé imagem extra 3" style="max-width:200px;margin-top:10px;" />
+      <a href="https://trustedchoicestore.store/privacypolicy/index.html">Πολιτική Απορρήτου</a>
+      <p style="font-size:12px;color:#666;margin-top:10px;">
+        Αυτή η διαφήμιση δεν συνιστά ιατρική συμβουλή. Τα αποτελέσματα μπορεί να διαφέρουν.
+        Το προϊόν είναι συμπλήρωμα διατροφής, όχι φάρμακο.
+      </p>
     </footer>
   </div>
 
@@ -146,7 +221,6 @@
       // Aguarda 250ms para garantir o envio do evento antes do redirecionamento
       setTimeout(function() {
         window.location.href = AFFILIATE_URL;
-        // Para abrir em nova aba, use: window.open(AFFILIATE_URL, '_blank');
       }, 250);
     }
   </script>
