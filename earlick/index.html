@@ -60,6 +60,7 @@
       text-align:center;
     }
     footer a{color:#05204a;text-decoration:underline;}
+    img{border-radius:10px;max-width:100%;}
   </style>
 </head>
 <body>
@@ -80,21 +81,43 @@
   <main>
     <section class="content">
       <div class="card">
-        <h2>Τι μπορεί να προσφέρει</h2>
-        <p>Υποστήριξη ακουστικής άνεσης, φυτικά εκχυλίσματα, καλύτερη ρουτίνα ύπνου‑αφύπνισης, ήπια ηρεμία 🧘</p>
+        <h2>Γιατί να επιλέξετε το Earlick Forte</h2>
+        <p>Το Earlick Forte είναι μια <strong>προηγμένη φυτική φόρμουλα</strong> που έχει σχεδιαστεί για να υποστηρίζει την ακουστική άνεση, την ηρεμία του νευρικού συστήματος και την ισορροπία του κύκλου ύπνου‑αφύπνισης. Δεν υπόσχεται θαύματα, αλλά μπορεί να γίνει μέρος μιας <strong>υγιεινής καθημερινής ρουτίνας</strong>.</p>
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/2.webp" alt="Earlick εικόνα 2">
       </div>
+
       <div class="card">
         <h2>Σύνθεση</h2>
         <ul>
-          <li>Spirulina Platensis</li>
-          <li>Κανέλα</li>
-          <li>Κάστανο & Δεντρολίβανο</li>
-          <li>Τσάι δέντρου & Ginseng</li>
+          <li><strong>Spirulina Platensis</strong> — παραδοσιακά χρησιμοποιείται για γενική ευεξία.</li>
+          <li><strong>Κανέλα</strong> — συμπληρωματικό συστατικό.</li>
+          <li><strong>Κάστανο & Δεντρολίβανο</strong> — υποστήριξη κυκλοφορίας και άνεσης.</li>
+          <li><strong>Τσάι δέντρου & Ginseng</strong> — συμβάλλουν στην ενέργεια και ισορροπία.</li>
         </ul>
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/3.webp" alt="Earlick εικόνα 3">
       </div>
+
+      <div class="card">
+        <h2>Πώς να χρησιμοποιήσετε</h2>
+        <ol>
+          <li>Πάρτε 1 κάψουλα την ημέρα με νερό.</li>
+          <li>Συνδυάστε με καλές συνήθειες (π.χ. αποφυγή έντονου θορύβου).</li>
+          <li>Ακολουθήστε την πορεία καθημερινά για καλύτερη αξιολόγηση.</li>
+        </ol>
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/5.webp" alt="Earlick εικόνα 5">
+      </div>
+
       <div class="card">
         <h2>Σχόλια πελατών</h2>
         <p>«Απλώς νιώθω πιο άνετα στις καθημερινές συζητήσεις.» — Μαρία</p>
+        <p>«Εύκολο στη χρήση, μέρος της ρουτίνας μου.» — Νίκος</p>
+        <p>«Καλή συσκευασία και εξυπηρέτηση.» — Ελένη</p>
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/6.webp" alt="Earlick εικόνα 6">
+      </div>
+
+      <div class="card">
+        <h2>Σημαντικές πληροφορίες</h2>
+        <p>Το προϊόν βασίζεται σε φυτικά εκχυλίσματα. Δεν αντικαθιστά ιατρική διάγνωση ή θεραπεία. Εάν έχετε σοβαρά συμπτώματα ή χρόνια προβλήματα, συμβουλευτείτε έναν επαγγελματία υγείας πριν τη χρήση.</p>
       </div>
     </section>
 
@@ -103,9 +126,13 @@
         <h2>Προσφορά</h2>
         <p><del>EUR78</del> <strong>EUR39</strong></p>
         <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Παραγγελία τώρα</button>
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/4.webp" alt="Earlick εικόνα 4">
       </div>
       <div class="card">
-        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/2.webp" alt="Earlick εικόνα 2" style="width:100%;border-radius:10px;">
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/7.webp" alt="Earlick εικόνα 7">
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Earlick εικόνα 8">
       </div>
     </aside>
   </main>
@@ -116,7 +143,7 @@
     <a href="/privacypolicy/index.html">Πολιτική Απορρήτου</a>
   </footer>
 
-  <!-- Event snippet for Lead -->
+    <!-- Event snippet for Lead -->
   <script>
     function sendConversionEvent(){
       if(typeof gtag === 'function'){
@@ -127,12 +154,17 @@
         });
       }
     }
+
     const AFFILIATE_URL="https://earlick-gr-ofc.doctorbuyer.com/l/?sub1={campaignid}&sub2={adgroupid}&sub3={keyword}&sub4={creative}";
+
     function handleOrderClick(openNewTab){
       sendConversionEvent();
       setTimeout(function(){
-        if(openNewTab){window.open(AFFILIATE_URL,'_blank');}
-        else{window.location.href=AFFILIATE_URL;}
+        if(openNewTab){
+          window.open(AFFILIATE_URL,'_blank');
+        } else {
+          window.location.href=AFFILIATE_URL;
+        }
       },250);
     }
   </script>
