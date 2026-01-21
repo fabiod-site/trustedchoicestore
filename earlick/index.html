@@ -27,20 +27,27 @@
       background:linear-gradient(135deg,#e6f7ff 0%,#f0f8ff 40%,#f7fbff 100%);
       color:#0f172a;
       overflow-x:hidden;
+      -webkit-text-size-adjust: 100%; /* Impede zoom de texto no iOS */
     }
-    .site-wrap{max-width:1400px;margin:0 auto;padding:0 24px;}
+    .site-wrap{
+      max-width:1400px;
+      margin:0 auto;
+      padding:0 24px;
+      box-sizing:border-box;
+    }
     
-    /* NOVO ESTILO DO BANNER DE URGÊNCIA */
+    /* BANNER DE URGÊNCIA */
     .urgency-banner {
       background: linear-gradient(90deg, #ff6b35, #ff8a5b);
       color: white;
-      padding: 16px;
+      padding: 16px 20px;
       text-align: center;
       margin: 0;
       font-weight: 700;
       font-size: 18px;
       border-bottom: 3px solid #e55a2b;
       box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+      line-height: 1.4;
     }
     .urgency-banner .highlight {
       background-color: rgba(255, 255, 255, 0.2);
@@ -48,10 +55,12 @@
       border-radius: 6px;
       margin: 0 5px;
       font-weight: 800;
+      display: inline-block;
     }
     .urgency-banner .icon {
       margin-right: 10px;
       animation: pulse 2s infinite;
+      display: inline-block;
     }
     @keyframes pulse {
       0% { transform: scale(1); }
@@ -59,39 +68,305 @@
       100% { transform: scale(1); }
     }
     
-    header.hero{display:flex;align-items:center;gap:32px;padding:40px 0;background:none;}
-    .hero-left{flex:1;min-width:300px;}
-    .hero-right img{max-width:320px;width:100%;border-radius:8px;}
-    h1{font-size:36px;color:#05204a;margin:0 0 12px;}
-    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-size:16px;margin:10px 0;transition:transform 0.3s, box-shadow 0.3s;}
-    .btn-cta:hover{transform:translateY(-3px);box-shadow:0 7px 14px rgba(255,107,53,0.4);}
-    main{display:flex;flex-wrap:wrap;gap:32px;padding:40px 0;}
-    .content{flex:2;min-width:360px;}
-    aside{flex:1;min-width:300px;}
-    .card{background:#fff;border-radius:12px;padding:22px;margin-bottom:20px;box-shadow:0 6px 18px rgba(0,0,0,0.04);transition:transform 0.3s;}
-    .card:hover{transform:translateY(-5px);}
-    footer{background:rgba(0,82,153,0.05);padding:24px 0;text-align:center;margin-top:24px;}
-    .benefit-item{display:flex;align-items:center;gap:12px;margin:12px 0;}
-    .benefit-icon{color:#ff6b35;font-size:20px;}
-    .price-old{text-decoration:line-through;color:#888;font-size:18px;}
-    .price-new{color:#ff6b35;font-size:28px;font-weight:700;text-shadow:1px 1px 3px rgba(0,0,0,0.1);}
+    /* HERO SECTION - ESTILOS BASE */
+    header.hero {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 40px 0;
+      background: none;
+    }
+    .hero-left{
+      flex:1;
+      min-width:300px;
+    }
+    .hero-right{
+      flex:0 0 auto;
+    }
+    .hero-right img {
+      max-width: 320px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: block;
+    }
+    h1{
+      font-size:36px;
+      color:#05204a;
+      margin:0 0 12px;
+      line-height:1.2;
+    }
+    p.lead {
+      margin:0 0 20px;
+      font-size:18px;
+      color:#333;
+      line-height:1.5;
+    }
     
-    /* NOVO: Banner secundário de estoque */
+    /* BOTÃO CTA */
+    .btn-cta{
+      background:linear-gradient(90deg,#ff6b35,#ff8a5b);
+      color:#fff;
+      padding:16px 28px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+      font-family:'Poppins',sans-serif;
+      font-size:18px;
+      margin:10px 0;
+      transition:transform 0.3s, box-shadow 0.3s;
+      display: inline-block;
+      width: auto;
+    }
+    .btn-cta:hover{
+      transform:translateY(-3px);
+      box-shadow:0 7px 14px rgba(255,107,53,0.4);
+    }
+    
+    /* CONTEÚDO PRINCIPAL */
+    main{
+      display:flex;
+      flex-wrap:wrap;
+      gap:32px;
+      padding:40px 0;
+    }
+    .content{
+      flex:2;
+      min-width:360px;
+    }
+    aside{
+      flex:1;
+      min-width:300px;
+    }
+    .card{
+      background:#fff;
+      border-radius:12px;
+      padding:26px;
+      margin-bottom:24px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.04);
+      transition:transform 0.3s;
+    }
+    .card:hover{
+      transform:translateY(-5px);
+    }
+    .card h2{
+      font-size:24px;
+      margin:0 0 15px;
+      color:#05204a;
+    }
+    .card p, .card li{
+      font-size:16px;
+      line-height:1.6;
+      color:#333;
+    }
+    .card ul, .card ol {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+    
+    /* ELEMENTOS COMUNS */
+    footer{
+      background:rgba(0,82,153,0.05);
+      padding:24px 0;
+      text-align:center;
+      margin-top:24px;
+    }
+    .benefit-item{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      margin:14px 0;
+    }
+    .benefit-icon{
+      color:#ff6b35;
+      font-size:22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .price-old{
+      text-decoration:line-through;
+      color:#888;
+      font-size:20px;
+    }
+    .price-new{
+      color:#ff6b35;
+      font-size:32px;
+      font-weight:700;
+      text-shadow:1px 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    /* AVISO DE ESTOQUE */
     .stock-warning {
       background: linear-gradient(90deg, #dc3545, #e35d6a);
       color: white;
-      padding: 12px;
+      padding: 14px;
       text-align: center;
       border-radius: 8px;
-      margin: 15px 0;
+      margin: 18px 0;
       font-weight: 600;
       font-size: 16px;
       border-left: 5px solid #ffc107;
+      line-height: 1.4;
     }
     
+    /* =========================================== */
+    /* RESPONSIVIDADE PARA CELULAR (MOBILE FIRST) */
+    /* =========================================== */
+    
+    /* Dispositivos menores que 768px (Tablet e Celular) */
     @media (max-width: 768px) {
-      .urgency-banner { font-size: 16px; padding: 12px; }
-      .stock-warning { font-size: 14px; }
+      .site-wrap {
+        padding: 0 16px; /* Menos padding nas laterais */
+      }
+      
+      /* BANNER ajustado */
+      .urgency-banner {
+        font-size: 16px;
+        padding: 14px 12px;
+        line-height: 1.3;
+      }
+      .urgency-banner .highlight {
+        padding: 3px 8px;
+        margin: 0 3px;
+      }
+      
+      /* HERO SECTION reorganizada */
+      header.hero {
+        flex-direction: column; /* Coluna no mobile */
+        text-align: center;
+        padding: 20px 0 30px 0;
+        gap: 20px;
+      }
+      
+      /* IMAGEM MAIOR no mobile */
+      .hero-right {
+        width: 100%;
+        order: 1; /* Imagem vem PRIMEIRO */
+      }
+      .hero-right img {
+        max-width: 300px !important; /* Imagem maior */
+        width: 85% !important;
+        margin: 0 auto;
+      }
+      
+      .hero-left {
+        width: 100%;
+        order: 2; /* Texto vem DEPOIS */
+      }
+      
+      h1 {
+        font-size: 28px !important;
+        line-height: 1.3;
+      }
+      
+      p.lead {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      
+      /* BOTÃO ajustado */
+      .btn-cta {
+        padding: 16px 24px;
+        font-size: 17px;
+        width: 100%; /* Botão ocupa largura total */
+        max-width: 350px;
+        margin: 15px auto;
+        display: block;
+      }
+      
+      /* CONTEÚDO PRINCIPAL - uma coluna */
+      main {
+        flex-direction: column;
+        padding: 25px 0;
+        gap: 20px;
+      }
+      
+      .content, aside {
+        flex: 1 1 100%; /* Ocupa 100% da largura */
+        min-width: 100%;
+        width: 100%;
+      }
+      
+      /* CARDS ajustados */
+      .card {
+        padding: 20px;
+        margin-bottom: 18px;
+      }
+      
+      .card h2 {
+        font-size: 22px;
+      }
+      
+      /* PREÇOS ajustados */
+      .price-new {
+        font-size: 28px;
+      }
+      
+      .price-old {
+        font-size: 18px;
+      }
+      
+      /* AVISO DE ESTOQUE */
+      .stock-warning {
+        font-size: 15px;
+        padding: 12px;
+        margin: 15px 0;
+      }
+      
+      /* FOOTER ajustado */
+      footer {
+        padding: 20px 0;
+        font-size: 14px;
+      }
+    }
+    
+    /* Celulares muito pequenos (iPhone SE etc) */
+    @media (max-width: 375px) {
+      .hero-right img {
+        max-width: 260px !important;
+        width: 90% !important;
+      }
+      
+      h1 {
+        font-size: 24px !important;
+      }
+      
+      .btn-cta {
+        font-size: 16px;
+        padding: 14px 20px;
+      }
+      
+      .urgency-banner {
+        font-size: 15px;
+        padding: 12px 10px;
+      }
+      
+      .card {
+        padding: 18px;
+      }
+    }
+    
+    /* Tablets (768px a 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero-right img {
+        max-width: 280px;
+      }
+      
+      h1 {
+        font-size: 30px;
+      }
+      
+      .site-wrap {
+        padding: 0 20px;
+      }
+    }
+    
+    /* Para telas grandes (acima de 1400px) */
+    @media (min-width: 1400px) {
+      .hero-right img {
+        max-width: 360px;
+      }
     }
   </style>
 </head>
@@ -105,13 +380,13 @@
       <span class="highlight">πρωτες 50 παραγγελίες</span> της ημέρας. Μην το χάσετε!
     </div>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <header class="hero">
       <div class="hero-left">
         <h1>Earlick Forte — Νέα Προσέγγιση στη Φυσική Υποστήριξη Ακοής</h1>
-        <p>Σύνθεση βοτανικών εκχυλισμάτων για καθημερινή άνεση και ευεξία της ακοής</p>
+        <p class="lead">Σύνθεση βοτανικών εκχυλισμάτων για καθημερινή άνεση και ευεξία της ακοής</p>
         
-        <!-- AVISO DE ESTOQUE (opcional, remova se não quiser) -->
+        <!-- AVISO DE ESTOQUE -->
         <div class="stock-warning">
           ⚡ Μείωση τιμής ενεργή: Ποσότητες περιορισμένες. Η τιμή μπορεί να αυξηθεί σύντομα.
         </div>
@@ -119,7 +394,7 @@
         <button class="btn-cta" onclick="handleOrderClick()">
           🛒 ΔΙΑΚΡΙΤΙΚΗ ΠΑΡΑΓΓΕΛΙΑ — <del>EUR78</del> <strong>EUR39</strong>
         </button>
-        <p style="font-size:14px;color:#666;margin-top:8px;">
+        <p style="font-size:14px;color:#666;margin-top:10px; line-height:1.4;">
           ⚠️ Προσοχή: Συμβουλευτείτε ειδικό πριν τη χρήση αν έχετε ιατρικά προβλήματα
         </p>
       </div>
@@ -128,7 +403,7 @@
       </div>
     </header>
 
-    <!-- MAIN -->
+    <!-- MAIN CONTENT -->
     <main>
       <section class="content">
         
@@ -152,13 +427,13 @@
             <div><strong>Κύκλος ύπνου-αφύπνισης</strong> - Υποστηρίζει φυσιολογικό ρυθμό</div>
           </div>
           
-          <!-- NOVO: Mini-banner dentro do card -->
+          <!-- Mini-banner dentro do card -->
           <div style="background:#fff3cd;border-left:4px solid #ffc107;padding:12px;margin-top:20px;border-radius:4px;">
             <strong>🚨 Σημαντική ενημέρωση:</strong> Λόγω υψηλής ζήτησης, η τιμή προσφοράς μπορεί να μην επαναληφθεί.
           </div>
         </div>
 
-        <!-- PROBLEMAS COMUNS (SEM DIAGNÓSTICO) -->
+        <!-- PROBLEMAS COMUNS -->
         <div class="card">
           <h2>Συνηθισμένες καταστάσεις που ενδιαφέρουν πολλούς</h2>
           <p>Πολλοί άνθρωποι αναζητούν υποστήριξη για:</p>
@@ -171,7 +446,7 @@
           <p><em>Το Earlick Forte μπορεί να προσφέρει υποστήριξη σε αυτές τις καθημερινές καταστάσεις.</em></p>
         </div>
 
-        <!-- TECNOLOGIA (SEM ALEGAÇÕES) -->
+        <!-- TECNOLOGIA -->
         <div class="card">
           <h2>Προσέγγιση με βάση τη φύση</h2>
           <p>Το Earlick Forte αναπτύχθηκε με έμφαση σε φυσικά συστατικά που χρησιμοποιούνται ευρέως για γενική ευεξία:</p>
@@ -187,22 +462,22 @@
         <!-- COMO FUNCIONA -->
         <div class="card">
           <h2>Πώς να χρησιμοποιήσετε</h2>
-          <div style="display:flex;gap:20px;flex-wrap:wrap;margin:20px 0;">
-            <div style="flex:1;min-width:200px;text-align:center;">
+          <div style="display:flex;gap:20px;flex-wrap:wrap;margin:20px 0; justify-content: center;">
+            <div style="flex:1;min-width:160px;text-align:center;">
               <div style="background:#e6f7ff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;">1</div>
               <p>1 κάψουλα ημερησίως με νερό</p>
             </div>
-            <div style="flex:1;min-width:200px;text-align:center;">
+            <div style="flex:1;min-width:160px;text-align:center;">
               <div style="background:#e6f7ff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;">2</div>
               <p>Συνδυάστε με ήρεμη καθημερινότητα</p>
             </div>
-            <div style="flex:1;min-width:200px;text-align:center;">
+            <div style="flex:1;min-width:160px;text-align:center;">
               <div style="background:#e6f7ff;border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:bold;">3</div>
               <p>Συνεπής χρήση για καλύτερη εμπειρία</p>
             </div>
           </div>
           
-          <!-- NOVO: Urgência no botão secundário -->
+          <!-- Urgência no botão secundário -->
           <div style="background:#f8f9fa;padding:15px;border-radius:8px;margin-top:15px;text-align:center;">
             <p style="margin:0 0 10px 0;color:#dc3545;font-weight:600;">
               🔥 <strong>Προλάβετε τη διαθεσιμότητα:</strong> Αυτή η παρτίδα τελειώνει γρήγορα!
@@ -211,7 +486,7 @@
           </div>
         </div>
 
-        <!-- ESPECIALISTA (SEM RECOMENDAÇÃO MÉDICA) -->
+        <!-- ESPECIALISTA -->
         <div class="card">
           <h2>Πληροφορίες για τη σύνθεση</h2>
           <p>Η σύνθεση του Earlick Forte περιλαμβάνει βοτανικά εκχυλίσματα που μελετήθηκαν για τη γενική τους ωφέλεια. Η αλληλεπίδραση φυτικών συστατικών μπορεί να προσφέρει ολοκληρωμένη υποστήριξη.</p>
@@ -223,7 +498,7 @@
       <aside>
         <!-- OFERTA -->
         <div class="card" style="text-align:center;border:2px solid #ff6b35;">
-          <div style="background:#ff6b35;color:white;padding:10px;border-radius:8px 8px 0 0;margin:-22px -22px 20px -22px;">
+          <div style="background:#ff6b35;color:white;padding:10px;border-radius:8px 8px 0 0;margin:-26px -26px 20px -26px;">
             <h2 style="color:white;margin:0;">🚨 ΠΑΡΑΤΑΣΗ ΤΙΜΗΣ</h2>
           </div>
           <p style="color:#888;margin-bottom:5px;">Κανονική Τιμή:</p>
@@ -236,7 +511,7 @@
             <strong>Εξοικονόμηση 50%</strong> · Περιορισμένος αριθμός
           </p>
           
-          <!-- NOVO: Contador de "unidades restantes" (fake dinâmico) -->
+          <!-- Contador de "unidades restantes" -->
           <div style="background:#fff8e1;padding:10px;border-radius:6px;margin:15px 0;border:1px dashed #ffb300;">
             <p style="margin:0;font-size:14px;">
               <span style="color:#d32f2f;font-weight:bold;">⏳ Λίγες μονάδες απομένουν:</span><br>
@@ -247,9 +522,9 @@
           <button class="btn-cta" onclick="handleOrderClick()" style="width:100%;margin:20px 0;font-size:18px;padding:15px;">
             🛒 ΔΗΛΩΣΤΕ ΤΗΝ ΠΡΟΣΦΟΡΑ ΤΩΡΑ
           </button>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Προσφορά" style="max-width:100%;border-radius:8px;margin-top:10px;" />
+          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Προσφορά" style="max-width:100%;border-radius:8px;margin-top:10px; height:auto;" />
           
-          <!-- NOVO: Selo de garantia -->
+          <!-- Selo de garantia -->
           <div style="margin-top:15px;padding-top:15px;border-top:1px solid #eee;">
             <p style="font-size:12px;color:#666;">
               ✅ <strong>Εγγυημένη τιμή:</strong> Αυτή η τιμή είναι κλειδωμένη για παραγγελίες που γίνονται τώρα.
@@ -293,9 +568,9 @@
     <!-- FOOTER -->
     <footer>
       <div class="muted">© 2026 Trusted Choice Store — Earlick Forte</div>
-      <a href="https://trustedchoicestore.store/privacypolicy/index.html">Πολιτική Απορρήτου</a>
-      <p style="font-size:12px;color:#666;margin-top:10px;">
-        Αυτή η διαφήμιση δεν συνιστά ιατρική συμβουλή. Τα αποτελέσματα μπορεί να διαφέρουν.
+      <a href="https://trustedchoicestore.store/privacypolicy/index.html" style="color:#05204a;text-decoration:underline;font-size:15px;">Πολιτική Απορρήτου</a>
+      <p style="font-size:12px;color:#666;margin-top:10px; line-height:1.5;">
+        Αυτή η διαφήμιση δεν συνιστά ιατρική συμβουλή. Τα αποτελέσματα μπορεί να διαφέρουν.<br>
         Το προϊόν είναι συμπλήρωμα διατροφής, όχι φάρμακο.
       </p>
     </footer>
@@ -321,7 +596,7 @@
       }, 250);
     }
     
-    // NOVO: Efeito dinâmico no contador de estoque (opcional)
+    // Efeito dinâmico no contador de estoque (opcional)
     document.addEventListener('DOMContentLoaded', function() {
       const stockElement = document.getElementById('stock-counter');
       if (stockElement) {
@@ -336,6 +611,11 @@
             setTimeout(() => stockElement.style.color = '#ff6b35', 300);
           }
         }, 30000); // Checa a cada 30 segundos
+      }
+      
+      // Otimização para mobile: previte zoom em inputs (opcional)
+      if ('ontouchstart' in window) {
+        document.addEventListener('touchstart', function() {}, {passive: true});
       }
     });
   </script>
