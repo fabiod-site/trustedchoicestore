@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Earlick Forte — Προσφορά Προπαραγγελίας</title>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-11505591976');
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -20,7 +29,7 @@
     .hero-left{flex:1;min-width:300px;}
     .hero-right img{max-width:320px;width:100%;border-radius:8px;}
     h1{font-size:36px;color:#05204a;margin:0 0 12px;}
-    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;}
+    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-size:16px;}
     main{display:flex;flex-wrap:wrap;gap:32px;padding:40px 0;}
     .content{flex:2;min-width:360px;}
     aside{flex:1;min-width:300px;}
@@ -35,7 +44,7 @@
       <div class="hero-left">
         <h1>Earlick Forte — Υποστήριξη ακουστικής άνεσης</h1>
         <p>Φυσική σύνθεση για καθημερινή ευεξία και άνεση 🎶</p>
-        <button class="btn-cta">🛒 Παραγγελία τώρα — €39</button>
+        <button class="btn-cta" onclick="handleOrderClick()">🛒 Παραγγελία τώρα — €39</button>
       </div>
       <div class="hero-right">
         <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.webp" alt="Earlick Forte" />
@@ -78,6 +87,7 @@
             <li>Συνδυάστε με καλές συνήθειες</li>
           </ol>
           <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/5.webp" alt="Modo de uso" style="max-width:200px;margin-top:10px;" />
+          <button class="btn-cta" onclick="handleOrderClick()" style="margin-top:10px;">🛒 Ξεκινήστε σήμερα</button>
         </div>
 
         <div class="card">
@@ -98,6 +108,7 @@
           <h2>Προσφορά</h2>
           <p><del>EUR78</del> <strong>EUR39</strong></p>
           <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Oferta especial" style="max-width:200px;margin-top:10px;" />
+          <button class="btn-cta" onclick="handleOrderClick()" style="margin-top:10px;">🛒 Παραγγελία τώρα</button>
         </div>
 
         <div class="card">
@@ -117,5 +128,27 @@
       <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/12.webp" alt="Rodapé imagem extra 3" style="max-width:200px;margin-top:10px;" />
     </footer>
   </div>
+
+  <script>
+    // SEU LINK DE AFILIADO DO DR. CASH
+    const AFFILIATE_URL = "https://earlick-gr-ofc.doctorbuyer.com/l/?sub1={campaignid}&sub2={adgroupid}&sub3={keyword}&sub4={creative}";
+    
+    function handleOrderClick() {
+      // Dispara o evento de conversão do Google Ads
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-11505591976/Y0iNCNvojOgbEKjNpe4q',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      }
+      
+      // Aguarda 250ms para garantir o envio do evento antes do redirecionamento
+      setTimeout(function() {
+        window.location.href = AFFILIATE_URL;
+        // Para abrir em nova aba, use: window.open(AFFILIATE_URL, '_blank');
+      }, 250);
+    }
+  </script>
 </body>
 </html>
