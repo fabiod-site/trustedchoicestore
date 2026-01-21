@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="el">
 <head>
@@ -8,6 +7,7 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11505591976"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,148 +17,146 @@
   </script>
 
   <style>
+    /* Reset e layout principal */
+    html,body{height:100%;}
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #e6f7ff 0%, #f0f8ff 40%, #f7fbff 100%);
       color: #0f172a;
-      overflow-x: hidden;
+      overflow-x: hidden; /* evita scroll horizontal */
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
+
+    /* Container centralizado */
+    .site-wrap{max-width:1200px;margin:0 auto;padding:0 16px;box-sizing:border-box;}
+
+    /* HERO */
     header.hero {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      padding: 60px;
+      gap: 24px;
+      padding: 48px 0;
       background: linear-gradient(90deg, rgba(0,82,153,0.06), rgba(0,122,153,0.02));
-      max-width: 1200px;
-      margin: 0 auto;
+      border-radius: 0; /* sem bordas extras */
     }
-    .hero-left { flex: 1; min-width: 260px; }
-    h1 { margin: 0 0 12px; font-size: 38px; font-weight: 700; color: #05204a; }
-    p.lead { font-size: 18px; color: #333; line-height: 1.6; }
+    .hero-left{flex:1;min-width:260px;}
+    .hero-right{flex:0 0 auto;}
+    h1 { margin: 0 0 12px; font-size: 34px; font-weight: 700; color: #05204a; line-height:1.05; }
+    p.lead { margin:0 0 14px; font-size: 17px; color:#333; line-height:1.5; }
+
     .btn-cta {
       background: linear-gradient(90deg,#ff6b35,#ff8a5b);
       color: white;
       border: none;
-      padding: 14px 22px;
-      border-radius: 12px;
+      padding: 12px 20px;
+      border-radius: 10px;
       font-weight: 700;
       cursor: pointer;
-      animation: pulse 2.6s infinite;
-      margin-top: 15px;
+      display:inline-block;
     }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255,107,53,0.4); }
-      70% { box-shadow: 0 0 0 12px rgba(255,107,53,0); }
-      100% { box-shadow: 0 0 0 0 rgba(255,107,53,0); }
-    }
+
     .hero-right img {
-      max-width: 100%;
-      height: auto;
-    }
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 40px;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .content { flex: 2; min-width: 300px; }
-    aside { flex: 1; min-width: 280px; }
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-    }
-    .card h2 { font-size: 26px; margin-bottom: 12px; }
-    .card p, .card li { font-size: 18px; line-height: 1.6; }
-    footer {
-      background: rgba(0,82,153,0.05);
-      padding: 30px 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      max-width: 320px; /* controla o tamanho da imagem */
       width: 100%;
-      margin: 0 auto;
-    }
-    footer a { color: #05204a; text-decoration: underline; font-size: 16px; }
-    footer .muted { font-size: 14px; color: #555; }
-    img {
-      border-radius: 10px;
-      max-width: 100%;
       height: auto;
-      display: block;
-      margin: 12px auto;
+      margin: 0;
+      box-shadow: none;
+      background: transparent;
+      border-radius: 8px;
+      display:block;
     }
-    .cta-block { text-align: center; margin: 20px 0; }
+
+    /* MAIN */
+    main{display:flex;flex-wrap:wrap;gap:24px;padding:32px 0;}
+    .content{flex:2;min-width:300px;}
+    aside{flex:1;min-width:260px;}
+
+    .card{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 6px 18px rgba(0,0,0,0.04);}
+    .card h2{font-size:22px;margin:0 0 10px;color:#05204a;}
+    .card p, .card li{font-size:16px;line-height:1.6;color:#333;}
+    ul{padding-left:18px;margin:8px 0;}
+    ol{padding-left:18px;margin:8px 0;}
+
+    img.responsive{max-width:100%;height:auto;border-radius:8px;display:block;margin:12px 0;}
+
+    footer{background:rgba(0,82,153,0.05);padding:24px 0;text-align:center;margin-top:24px;}
+    footer .muted{font-size:14px;color:#555;}
+    footer a{color:#05204a;text-decoration:underline;font-size:15px;}
+
+    /* Responsividade */
+    @media (max-width:900px){
+      header.hero{flex-direction:column;align-items:flex-start;padding:28px 0;}
+      .hero-right{align-self:center;}
+      h1{font-size:28px;}
+    }
   </style>
 </head>
 <body>
-
-  <header class="hero">
-    <div class="hero-left">
-      <h1>Earlick Forte — Υποστήριξη ακουστικής άνεσης</h1>
-      <p class="lead">Φυσική σύνθεση για καθημερινή ευεξία και άνεση 🎶</p>
-      <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Παραγγελία τώρα — €39</button>
-    </div>
-    <div class="hero-right">
-      <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.webp" alt="Earlick Forte">
-    </div>
-  </header>
-
-  <main>
-    <section class="content">
-      <div class="card">
-        <h2>Γιατί να επιλέξετε το Earlick Forte</h2>
-        <p>Το Earlick Forte είναι μια <strong>προηγμένη φυτική φόρμουλα</strong> που έχει σχεδιαστεί για να υποστηρίζει την ακουστική άνεση, την ηρεμία του νευρικού συστήματος και την ισορροπία του κύκλου ύπνου‑αφύπνισης.</p>
-        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/2.webp" alt="Earlick εικόνα 2">
+  <div class="site-wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left">
+        <h1>Earlick Forte — Υποστήριξη ακουστικής άνεσης</h1>
+        <p class="lead">Φυσική σύνθεση για καθημερινή ευεξία και άνεση 🎶</p>
+        <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Παραγγελία τώρα — €39</button>
       </div>
-
-      <div class="card">
-        <h2>Σύνθεση</h2>
-        <ul>
-          <li><strong>Spirulina Platensis</strong> — παραδοσιακά χρησιμοποιείται για γενική ευεξία.</li>
-          <li><strong>Κανέλα</strong> — συμπληρωματικό συστατικό.</li>
-          <li><strong>Κάστανο & Δεντρολίβανο</strong> — υποστήριξη κυκλοφορίας και άνεσης.</li>
-          <li><strong>Τσάι δέντρου & Ginseng</strong> — συμβάλλουν στην ενέργεια και ισορροπία.</li>
-        </ul>
-        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/3.webp" alt="Earlick εικόνα 3">
+      <div class="hero-right">
+        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.webp" alt="Earlick Forte" />
       </div>
+    </header>
 
-      <div class="card">
-        <h2>Πώς να χρησιμοποιήσετε</h2>
-        <ol>
-          <li>Πάρτε 1 κάψουλα την ημέρα με νερό.</li>
-          <li>Συνδυάστε με καλές συνήθειες (π.χ. αποφυγή έντονου θορύβου).</li>
-          <li>Ακολουθήστε την πορεία καθημερινά για καλύτερη αξιολόγηση.</li>
-        </ol>
-        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/5.webp" alt="Earlick εικόνα 5">
-        <div class="cta-block">
-          <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Ξεκινήστε σήμερα</button>
+    <!-- MAIN -->
+    <main>
+      <section class="content">
+        <div class="card">
+          <h2>Γιατί να επιλέξετε το Earlick Forte</h2>
+          <p>Το Earlick Forte είναι μια <strong>προηγμένη φυτική φόρμουλα</strong> που έχει σχεδιαστεί για να υποστηρίζει την ακουστική άνεση, την ηρεμία του νευρικού συστήματος και την ισορροπία του κύκλου ύπνου‑αφύπνισης.</p>
+          <img class="responsive" src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/2.webp" alt="Earlick εικόνα 2" />
         </div>
-      </div>
-    </section>
 
-    <aside>
-      <div class="card">
-        <h2>Προσφορά</h2>
-        <p><del>EUR78</del> <strong>EUR39</strong></p>
-        <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Παραγγελία τώρα</button>
-        <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/4.webp" alt="Earlick εικόνα 4">
-      </div>
-    </aside>
-  </main>
+        <div class="card">
+          <h2>Σύνθεση</h2>
+          <ul>
+            <li><strong>Spirulina Platensis</strong> — παραδοσιακά χρησιμοποιείται για γενική ευεξία.</li>
+            <li><strong>Κανέλα</strong> — συμπληρωματικό συστατικό.</li>
+            <li><strong>Κάστανο & Δεντρολίβανο</strong> — υποστήριξη κυκλοφορίας και άνεσης.</li>
+            <li><strong>Τσάι δέντρου & Ginseng</strong> — συμβάλλουν στην ενέργεια και ισορροπία.</li>
+          </ul>
+          <img class="responsive" src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/3.webp" alt="Earlick εικόνα 3" />
+        </div>
 
-  <footer>
-    <div class="muted">© 2026 Trusted Choice Store — Earlick Forte</div>
-    <a href="/privacypolicy/index.html">Πολιτική Απορρήτου</a>
-  </footer>
+        <div class="card">
+          <h2>Πώς να χρησιμοποιήσετε</h2>
+          <ol>
+            <li>Πάρτε 1 κάψουλα την ημέρα με νερό.</li>
+            <li>Συνδυάστε με καλές συνήθειες (π.χ. αποφυγή έντονου θορύβου).</li>
+            <li>Ακολουθήστε την πορεία καθημερινά για καλύτερη αξιολόγηση.</li>
+          </ol>
+          <img class="responsive" src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/5.webp" alt="Earlick εικόνα 5" />
+          <div style="text-align:center;margin-top:12px;">
+            <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Ξεκινήστε σήμερα</button>
+          </div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h2>Προσφορά</h2>
+          <p><del>EUR78</del> <strong>EUR39</strong></p>
+          <button class="btn-cta" onclick="handleOrderClick(false)">🛒 Παραγγελία τώρα</button>
+          <img class="responsive" src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/4.webp" alt="Earlick εικόνα 4" />
+        </div>
+      </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="muted">© 2026 Trusted Choice Store — Earlick Forte</div>
+      <a href="/privacypolicy/index.html">Πολιτική Απορρήτου</a>
+    </footer>
+  </div>
 
   <script>
     function sendConversionEvent(){
@@ -171,16 +169,12 @@
       }
     }
 
-    const AFFILIATE_URL="https://earlick-gr-ofc.doctorbuyer.com/l/?sub1={campaignid}&sub2={adgroupid}&sub3={keyword}&sub4={creative}";
+    const AFFILIATE_URL = "https://earlick-gr-ofc.doctorbuyer.com/l/?sub1={campaignid}&sub2={adgroupid}&sub3={keyword}&sub4={creative}";
 
     function handleOrderClick(openNewTab){
       sendConversionEvent();
       setTimeout(function(){
-        if(openNewTab){
-          window.open(AFFILIATE_URL,'_blank');
-        } else {
-          window.location.href=AFFILIATE_URL;
-        }
+        if(openNewTab){ window.open(AFFILIATE_URL,'_blank'); } else { window.location.href = AFFILIATE_URL; }
       },250);
     }
   </script>
