@@ -29,30 +29,80 @@
       overflow-x:hidden;
     }
     .site-wrap{max-width:1400px;margin:0 auto;padding:0 24px;}
+    
+    /* NOVO ESTILO DO BANNER DE URGÊNCIA */
+    .urgency-banner {
+      background: linear-gradient(90deg, #ff6b35, #ff8a5b);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      margin: 0;
+      font-weight: 700;
+      font-size: 18px;
+      border-bottom: 3px solid #e55a2b;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+    .urgency-banner .highlight {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin: 0 5px;
+      font-weight: 800;
+    }
+    .urgency-banner .icon {
+      margin-right: 10px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
     header.hero{display:flex;align-items:center;gap:32px;padding:40px 0;background:none;}
     .hero-left{flex:1;min-width:300px;}
     .hero-right img{max-width:320px;width:100%;border-radius:8px;}
     h1{font-size:36px;color:#05204a;margin:0 0 12px;}
-    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-size:16px;margin:10px 0;}
-    .btn-cta:hover{background:linear-gradient(90deg,#ff8a5b,#ff6b35);}
+    .btn-cta{background:linear-gradient(90deg,#ff6b35,#ff8a5b);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;cursor:pointer;border:none;font-family:'Poppins',sans-serif;font-size:16px;margin:10px 0;transition:transform 0.3s, box-shadow 0.3s;}
+    .btn-cta:hover{transform:translateY(-3px);box-shadow:0 7px 14px rgba(255,107,53,0.4);}
     main{display:flex;flex-wrap:wrap;gap:32px;padding:40px 0;}
     .content{flex:2;min-width:360px;}
     aside{flex:1;min-width:300px;}
-    .card{background:#fff;border-radius:12px;padding:22px;margin-bottom:20px;box-shadow:0 6px 18px rgba(0,0,0,0.04);}
+    .card{background:#fff;border-radius:12px;padding:22px;margin-bottom:20px;box-shadow:0 6px 18px rgba(0,0,0,0.04);transition:transform 0.3s;}
+    .card:hover{transform:translateY(-5px);}
     footer{background:rgba(0,82,153,0.05);padding:24px 0;text-align:center;margin-top:24px;}
-    .urgency-banner{background:linear-gradient(90deg,#ff4757,#ff6b81);color:white;padding:12px;text-align:center;border-radius:8px;margin:20px 0;font-weight:600;}
     .benefit-item{display:flex;align-items:center;gap:12px;margin:12px 0;}
     .benefit-icon{color:#ff6b35;font-size:20px;}
     .price-old{text-decoration:line-through;color:#888;font-size:18px;}
-    .price-new{color:#ff6b35;font-size:28px;font-weight:700;}
+    .price-new{color:#ff6b35;font-size:28px;font-weight:700;text-shadow:1px 1px 3px rgba(0,0,0,0.1);}
+    
+    /* NOVO: Banner secundário de estoque */
+    .stock-warning {
+      background: linear-gradient(90deg, #dc3545, #e35d6a);
+      color: white;
+      padding: 12px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-weight: 600;
+      font-size: 16px;
+      border-left: 5px solid #ffc107;
+    }
+    
+    @media (max-width: 768px) {
+      .urgency-banner { font-size: 16px; padding: 12px; }
+      .stock-warning { font-size: 14px; }
+    }
   </style>
 </head>
 <body>
   <div class="site-wrap">
     
-    <!-- URGENCY BANNER -->
+    <!-- BANNER DE URGÊNCIA SEM DATA FIXA -->
     <div class="urgency-banner">
-      ⚡ Προσφορά περιορισμένου χρόνου | Μόνο σήμερα 20.01.2026
+      <span class="icon">⚠️</span> 
+      <strong>ΠΡΟΣΟΧΗ:</strong> Η ειδική τιμή <span class="highlight">-50%</span> ισχύει μόνο για τις επόμενες 
+      <span class="highlight">πρωτες 50 παραγγελίες</span> της ημέρας. Μην το χάσετε!
     </div>
 
     <!-- HERO -->
@@ -60,8 +110,18 @@
       <div class="hero-left">
         <h1>Earlick Forte — Νέα Προσέγγιση στη Φυσική Υποστήριξη Ακοής</h1>
         <p>Σύνθεση βοτανικών εκχυλισμάτων για καθημερινή άνεση και ευεξία της ακοής</p>
-        <button class="btn-cta" onclick="handleOrderClick()">🛒 Παραγγελία τώρα — <del>EUR78</del> <strong>EUR39</strong></button>
-        <p style="font-size:14px;color:#666;">⚠️ Προσοχή: Συμβουλευτείτε ειδικό πριν τη χρήση αν έχετε ιατρικά προβλήματα</p>
+        
+        <!-- AVISO DE ESTOQUE (opcional, remova se não quiser) -->
+        <div class="stock-warning">
+          ⚡ Μείωση τιμής ενεργή: Ποσότητες περιορισμένες. Η τιμή μπορεί να αυξηθεί σύντομα.
+        </div>
+        
+        <button class="btn-cta" onclick="handleOrderClick()">
+          🛒 ΔΙΑΚΡΙΤΙΚΗ ΠΑΡΑΓΓΕΛΙΑ — <del>EUR78</del> <strong>EUR39</strong>
+        </button>
+        <p style="font-size:14px;color:#666;margin-top:8px;">
+          ⚠️ Προσοχή: Συμβουλευτείτε ειδικό πριν τη χρήση αν έχετε ιατρικά προβλήματα
+        </p>
       </div>
       <div class="hero-right">
         <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/1.webp" alt="Earlick Forte" />
@@ -90,6 +150,11 @@
           <div class="benefit-item">
             <div class="benefit-icon">✓</div>
             <div><strong>Κύκλος ύπνου-αφύπνισης</strong> - Υποστηρίζει φυσιολογικό ρυθμό</div>
+          </div>
+          
+          <!-- NOVO: Mini-banner dentro do card -->
+          <div style="background:#fff3cd;border-left:4px solid #ffc107;padding:12px;margin-top:20px;border-radius:4px;">
+            <strong>🚨 Σημαντική ενημέρωση:</strong> Λόγω υψηλής ζήτησης, η τιμή προσφοράς μπορεί να μην επαναληφθεί.
           </div>
         </div>
 
@@ -136,7 +201,14 @@
               <p>Συνεπής χρήση για καλύτερη εμπειρία</p>
             </div>
           </div>
-          <button class="btn-cta" onclick="handleOrderClick()">🛒 Ξεκινήστε τη φυσική σας υποστήριξη</button>
+          
+          <!-- NOVO: Urgência no botão secundário -->
+          <div style="background:#f8f9fa;padding:15px;border-radius:8px;margin-top:15px;text-align:center;">
+            <p style="margin:0 0 10px 0;color:#dc3545;font-weight:600;">
+              🔥 <strong>Προλάβετε τη διαθεσιμότητα:</strong> Αυτή η παρτίδα τελειώνει γρήγορα!
+            </p>
+            <button class="btn-cta" onclick="handleOrderClick()" style="width:100%;">🛒 Ξεκινήστε τη φυσική σας υποστήριξη ΤΩΡΑ</button>
+          </div>
         </div>
 
         <!-- ESPECIALISTA (SEM RECOMENDAÇÃO MÉDICA) -->
@@ -150,14 +222,39 @@
 
       <aside>
         <!-- OFERTA -->
-        <div class="card" style="text-align:center;">
-          <h2>Προσφορά Περιορισμένου Χρόνου</h2>
-          <p style="color:#888;margin-bottom:5px;">Τιμή λιανικής:</p>
+        <div class="card" style="text-align:center;border:2px solid #ff6b35;">
+          <div style="background:#ff6b35;color:white;padding:10px;border-radius:8px 8px 0 0;margin:-22px -22px 20px -22px;">
+            <h2 style="color:white;margin:0;">🚨 ΠΑΡΑΤΑΣΗ ΤΙΜΗΣ</h2>
+          </div>
+          <p style="color:#888;margin-bottom:5px;">Κανονική Τιμή:</p>
           <div class="price-old">EUR78</div>
-          <p style="color:#ff6b35;margin:10px 0;">ΕΙΔΙΚΗ ΤΙΜΗ ΠΑΡΑΓΓΕΛΙΑΣ:</p>
+          <p style="color:#ff6b35;margin:10px 0;font-size:18px;font-weight:700;">
+            ΕΙΔΙΚΗ ΤΙΜΗ ΠΑΡΑΓΓΕΛΙΑΣ:
+          </p>
           <div class="price-new">EUR39</div>
-          <button class="btn-cta" onclick="handleOrderClick()" style="width:100%;margin:20px 0;">🛒 Παραγγελία τώρα -50%</button>
-          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Προσφορά" style="max-width:100%;border-radius:8px;" />
+          <p style="font-size:14px;color:#666;margin:10px 0;">
+            <strong>Εξοικονόμηση 50%</strong> · Περιορισμένος αριθμός
+          </p>
+          
+          <!-- NOVO: Contador de "unidades restantes" (fake dinâmico) -->
+          <div style="background:#fff8e1;padding:10px;border-radius:6px;margin:15px 0;border:1px dashed #ffb300;">
+            <p style="margin:0;font-size:14px;">
+              <span style="color:#d32f2f;font-weight:bold;">⏳ Λίγες μονάδες απομένουν:</span><br>
+              <span id="stock-counter" style="font-size:18px;font-weight:800;color:#ff6b35;">12</span> από 50 διαθέσιμα
+            </p>
+          </div>
+          
+          <button class="btn-cta" onclick="handleOrderClick()" style="width:100%;margin:20px 0;font-size:18px;padding:15px;">
+            🛒 ΔΗΛΩΣΤΕ ΤΗΝ ΠΡΟΣΦΟΡΑ ΤΩΡΑ
+          </button>
+          <img src="https://raw.githubusercontent.com/fabiod-site/trustedchoicestore/main/earlickimg/8.webp" alt="Προσφορά" style="max-width:100%;border-radius:8px;margin-top:10px;" />
+          
+          <!-- NOVO: Selo de garantia -->
+          <div style="margin-top:15px;padding-top:15px;border-top:1px solid #eee;">
+            <p style="font-size:12px;color:#666;">
+              ✅ <strong>Εγγυημένη τιμή:</strong> Αυτή η τιμή είναι κλειδωμένη για παραγγελίες που γίνονται τώρα.
+            </p>
+          </div>
         </div>
 
         <!-- GARANTIA -->
@@ -180,7 +277,7 @@
 
         <!-- CONTRAINDICAÇÕES -->
         <div class="card" style="background:#fff8f8;border:1px solid #ffcccc;">
-          <h2 style="color:#d63031;">Σημαντικές Πληροφορίες</h2>
+          <h2 style="color:#d63031;">⚠️ Σημαντικές Πληροφορίες</h2>
           <ul>
             <li>Δεν είναι φάρμακο. Συμπλήρωμα διατροφής.</li>
             <li>Μη προορίζεται για διάγνωση, θεραπεία ή πρόληψη ασθενειών.</li>
@@ -223,6 +320,24 @@
         window.location.href = AFFILIATE_URL;
       }, 250);
     }
+    
+    // NOVO: Efeito dinâmico no contador de estoque (opcional)
+    document.addEventListener('DOMContentLoaded', function() {
+      const stockElement = document.getElementById('stock-counter');
+      if (stockElement) {
+        let currentStock = parseInt(stockElement.textContent);
+        // Simula diminuição ocasional (a cada 30 segundos)
+        setInterval(() => {
+          if (currentStock > 3 && Math.random() > 0.7) { // 30% de chance
+            currentStock--;
+            stockElement.textContent = currentStock;
+            // Efeito visual
+            stockElement.style.color = '#d32f2f';
+            setTimeout(() => stockElement.style.color = '#ff6b35', 300);
+          }
+        }, 30000); // Checa a cada 30 segundos
+      }
+    });
   </script>
 </body>
 </html>
